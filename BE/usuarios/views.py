@@ -17,10 +17,10 @@ class ValidarUsuarioView(APIView):
         usuario = authenticate(username=nombre_usuario, password=clave_usuario)
 
         if usuario is not None:
-            return Response({"mensaje": "Autenticación exitosa"}, status=status.HTTP_200_OK)
+            return Response({"exito": "Autenticación exitosa"}, status=status.HTTP_200_OK)
         
         else:
-            return Response({"mensaje": "Credenciales incorrectas"}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"error": "Credenciales incorrectas"}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class CreateUserView(APIView):
