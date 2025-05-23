@@ -7,6 +7,7 @@ function Routing() {
       <Router>
         <Routes>
           <Route path="/" element={<PagLogin />} />
+          <Route path="/Register" element={<PagRegister />} />
         </Routes>
       </Router>
     </div>

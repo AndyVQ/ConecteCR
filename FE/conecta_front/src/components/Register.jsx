@@ -2,7 +2,6 @@ import { postData } from "../services/fetch";
 import "../styles/register.css";
 import { useState } from "react";
 
-
 const FormularioRegister = () => {
   const [userName, SetUserName] = useState("");
   const [userFirst, SetUserFirst] = useState("");
@@ -12,6 +11,7 @@ const FormularioRegister = () => {
   const [userCedula, SetUserCedula] = useState("");
   const [userTel, SetUserTel] = useState("");
   const [reload, setReload] = useState(false);
+  
   async function registerInfo() {
     if (
       !userName ||
@@ -40,7 +40,7 @@ const FormularioRegister = () => {
       cedula: userCedula,
       telefono: userTel,
     };
-    postData("api/register", users); // Llamado para ingresar el usuario
+    await postData("usuarios/register/", users); // Llamado para ingresar el usuario
 
     setReload(!reload);
   }
@@ -94,9 +94,7 @@ const FormularioRegister = () => {
           <button onClick={registerInfo} className="register-Btn">
             Registrate
           </button>
-          <p className="register-p">
-            Ya tenes una cuenta? <Link to="/Login"> Login</Link>
-          </p>
+          <p className="p-register">Ya tienes una cuenta?</p>
         </div>
       </div>
     </>

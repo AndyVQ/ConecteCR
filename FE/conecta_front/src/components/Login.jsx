@@ -2,7 +2,6 @@ import { useState } from "react";
 import { postData } from "../services/fetch";
 import "../styles/Login.css";
 
-
 const Login = () => {
   const [usuario, setUsuario] = useState("");
   const [clave, setClave] = useState("");
@@ -23,20 +22,32 @@ const Login = () => {
   }
 
   return (
-    <>
-        <input
-        placeholder="Usuario"
-        onChange={(e) => setUsuario(e.target.value)}
-      />
+    <main className="cont-todo">
+      <div className="login-container">
+        <section className="cont-img">
+          <img src="\src\img\logo.png" alt="Logo ConecteCR" className="logo" />
+        </section>
 
-      <input
-        type="password"
-        placeholder="Clave Usuario"
-        onChange={(e) => setClave(e.target.value)}
-      />
-
-      <button onClick={validarUsuario}>Iniciar sesión</button>
-    </>
+        <section className="section-inputs">
+          <h2 className="h2">Iniciar sesión</h2>
+          <input
+            placeholder="Usuario"
+            onChange={(e) => setUsuario(e.target.value)}
+            className="input-usuario"
+          />
+          <input
+            type="password"
+            placeholder="Clave Usuario"
+            onChange={(e) => setClave(e.target.value)}
+            className="input-password"
+          />
+          <button onClick={validarUsuario} className="botton-iniciar">
+            Iniciar sesión
+          </button>
+        </section>
+      </div>
+    </main>
   );
 };
+
 export default Login;
