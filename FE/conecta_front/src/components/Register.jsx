@@ -1,6 +1,7 @@
 import { postData } from "../services/fetch";
 import "../styles/register.css";
 import { useState } from "react";
+import { Link } from "react-router-dom"
 
 const FormularioRegister = () => {
   const [userName, SetUserName] = useState("");
@@ -11,7 +12,7 @@ const FormularioRegister = () => {
   const [userCedula, SetUserCedula] = useState("");
   const [userTel, SetUserTel] = useState("");
   const [reload, setReload] = useState(false);
-  
+
   async function registerInfo() {
     if (
       !userName ||
@@ -40,64 +41,77 @@ const FormularioRegister = () => {
       cedula: userCedula,
       telefono: userTel,
     };
-    await postData("usuarios/register/", users); // Llamado para ingresar el usuario
+    await postData("usuarios/register/", users);
 
     setReload(!reload);
   }
+
   return (
     <>
       <div>
         <div className="register-Info">
-          <h3 className="register-h3">Registrate aquí</h3>
-          <input
-            onChange={(e) => SetUserName(e.target.value)}
-            type="text"
-            placeholder="Nombre de Usuario"
-            className="register-input"
-          />
-          <input
-            onChange={(e) => SetUserFirst(e.target.value)}
-            type="text"
-            placeholder="Primer Nombre"
-            className="register-input"
-          />
-          <input
-            onChange={(e) => SetUserLast(e.target.value)}
-            type="text"
-            placeholder="Apellidos"
-            className="register-input"
-          />
-          <input
-            onChange={(e) => SetUserEmail(e.target.value)}
-            type="email"
-            placeholder="Correo"
-            className="register-input"
-          />
-          <input
-            onChange={(e) => setUserPass(e.target.value)}
-            type="password"
-            placeholder="Contraseña"
-            className="register-input"
-          />
-          <input
-            onChange={(e) => SetUserCedula(e.target.value)}
-            type="text"
-            placeholder="Cedula"
-            className="register-input"
-          />
-          <input
-            onChange={(e) => SetUserTel(e.target.value)}
-            type="text"
-            placeholder="Telefono"
-            className="register-input"
-          />
-          <button onClick={registerInfo} className="register-Btn">
-            Registrate
-          </button>
-          <p className="p-register">Ya tienes una cuenta?</p>
+          <section className="cont-image">
+            <img src="\src\img\logo.png" alt="Logo ConecteCR" className="logo" />
+          </section>
+          <div className="register-inputs">
+                <h2 className="h2">Registrate aquí</h2>
+            <div className="input-columns">
+              <div className="columna columna-1">
+                <input
+                  onChange={(e) => SetUserName(e.target.value)}
+                  type="text"
+                  placeholder="Nombre de Usuario"
+                  className="register-input"
+                />
+                <input
+                  onChange={(e) => SetUserFirst(e.target.value)}
+                  type="text"
+                  placeholder="Primer Nombre"
+                  className="register-input"
+                />
+                <input
+                  onChange={(e) => SetUserLast(e.target.value)}
+                  type="text"
+                  placeholder="Apellidos"
+                  className="register-input"
+                />
+                <input
+                  onChange={(e) => SetUserEmail(e.target.value)}
+                  type="email"
+                  placeholder="Correo"
+                  className="register-input"
+                />
+                <p className="h2">Ya tienes una cuenta? <Link to= "/"> Haz click aqui</Link></p>
+              </div>
+              <div className="columna columna-2">
+                <input
+                  onChange={(e) => setUserPass(e.target.value)}
+                  type="password"
+                  placeholder="Contraseña"
+                  className="register-input"
+                />
+                <input
+                  onChange={(e) => SetUserCedula(e.target.value)}
+                  type="text"
+                  placeholder="Cédula"
+                  className="register-input"
+                />
+                <input
+                  onChange={(e) => SetUserTel(e.target.value)}
+                  type="text"
+                  placeholder="Teléfono"
+                  className="register-input"
+                />
+                <button onClick={registerInfo} className="register-Btn">
+                  Registrate
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
   );
 };
+
 export default FormularioRegister;

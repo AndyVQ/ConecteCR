@@ -7,7 +7,7 @@
   box-shadow: 0 0 40px rgba(0, 255, 128, 0.2);
   margin: 120px auto;
   background-color: white;
-  background: linear-gradient(to right, #eafff2 50%, #ffffff 50%);
+  background: linear-gradient(to right, #eafff2 100%, #ffffff 100%);
 }
 .cont-img {
   background: linear-gradient(to bottom, #b7e8c2, #66bb6a);
@@ -87,5 +87,31 @@
 }
 
 .h2 {
-    color: rgb(66, 185, 88);
+  color: rgb(66, 185, 88);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+@media screen and (max-width: 768px) {
+  .cont-img {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .login-container {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+    .section-inputs {
+    padding: 20px;
+  }
+
+  .input-usuario,
+  .input-password,
+  .botton-iniciar {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+
