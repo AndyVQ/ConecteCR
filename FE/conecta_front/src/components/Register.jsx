@@ -2,6 +2,7 @@ import { postData } from "../services/fetch";
 import "../styles/register.css";
 import { useState } from "react";
 import { Link } from "react-router-dom"
+import Swal from 'sweetalert2'
 
 const FormularioRegister = () => {
   const [userName, SetUserName] = useState("");
@@ -23,12 +24,20 @@ const FormularioRegister = () => {
       !userCedula ||
       !userTel
     ) {
-      alert("Rellena los espacios requeridos");
+        Swal.fire({
+        title: "Por favor rellena todos los campos!",
+        text: "Intentalo de nuevo!",
+        icon: "error",
+    });
       return;
     }
 
     if (userPass.length < 8) {
-      alert("La contraseña debe tener más de 8 caracteres");
+        Swal.fire({
+        title: "La contraseña debe tener mas de 8 caracteres!", 
+        text: "Intentalo de nuevo!",
+        icon: "error",
+    });
       return;
     }
 
@@ -42,7 +51,12 @@ const FormularioRegister = () => {
       telefono: userTel,
     };
     await postData("usuarios/register/", users);
-
+    
+    Swal.fire({
+      title: "Cuenta creada!",
+      text: "Intentalo de nuevo!",
+      icon: "success",
+    });
     setReload(!reload);
   }
 
@@ -60,13 +74,13 @@ const FormularioRegister = () => {
                 <input
                   onChange={(e) => SetUserName(e.target.value)}
                   type="text"
-                  placeholder="Nombre de Usuario"
+                  placeholder="Usuario"
                   className="register-input"
                 />
                 <input
                   onChange={(e) => SetUserFirst(e.target.value)}
                   type="text"
-                  placeholder="Primer Nombre"
+                  placeholder="Nombre"
                   className="register-input"
                 />
                 <input
@@ -87,7 +101,7 @@ const FormularioRegister = () => {
                 <input
                   onChange={(e) => setUserPass(e.target.value)}
                   type="password"
-                  placeholder="Contraseña"
+                  placeholder="Clave"
                   className="register-input"
                 />
                 <input
