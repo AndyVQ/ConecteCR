@@ -1,4 +1,5 @@
 import FormularioRegister from "../components/Register";
+import FooterHighFashion from "../components/Footer";
 
 const PagRegister = () => {
   return (
@@ -6,6 +7,9 @@ const PagRegister = () => {
       <div>
         <FormularioRegister />  
       </div>
+      <footer>
+        <FooterHighFashion/>   
+      </footer>
     </>
   );
 };

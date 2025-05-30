@@ -132,3 +132,29 @@
     align-items: center;
   }
 }
+.h20{  
+  position: relative;
+  left: 110px;         
+  color: #136c40;
+  text-align: center;                          
+  transition: color 0.3s ease;    
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.h20 a{
+  text-decoration: none;          
+  color: inherit;  
+}
+.h20 a:hover{
+  color: #007f3d;                 
+  text-decoration: underline;  
+}
+.h2{
+  color: #136c40;
+}
+.container my-5{
+
+  background-color: #003d1f;
+}
+.footer-comp{
+  background-color: red;
+}

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',   
     'campanas',
     'comunidades',
-    'firmas',
+    'peticiones',
     'reportes',
     'usuarios',
     'votaciones',

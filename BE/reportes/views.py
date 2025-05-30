@@ -1,3 +1,16 @@
 from django.shortcuts import render
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from .serializers import ReportesSerializer
+from .models import Reportes
 
-# Create your views here.
+class ReportesCreateView(ListCreateAPIView):
+    queryset = Reportes.objects.all()
+    serializer_class = ReportesSerializer
+    
+    lookup_field = 'id'
+    
+class ReportesRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Reportes.objects.all()
+    serializer_class = ReportesSerializer
+    
+    lookup_field = 'id'

@@ -1,3 +1,14 @@
 from django.shortcuts import render
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from .serializers import CampanaSerializer
+from .models import Campana
 
-# Create your views here.
+class CampanaCreateView(ListCreateAPIView):
+    queryset = Campana.objects.all()
+    serializer_class = CampanaSerializer
+    
+class CampanaRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Campana.objects.all()
+    serializer_class = CampanaSerializer
+    
+    lookup_field = 'id'

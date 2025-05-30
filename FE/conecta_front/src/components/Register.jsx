@@ -54,7 +54,7 @@ const FormularioRegister = () => {
     
     Swal.fire({
       title: "Cuenta creada!",
-      text: "Intentalo de nuevo!",
+      text: "Bienvenido a ConecteCR!",
       icon: "success",
     });
     setReload(!reload);
@@ -95,7 +95,7 @@ const FormularioRegister = () => {
                   placeholder="Correo"
                   className="register-input"
                 />
-                <p className="h2">Ya tienes una cuenta? <Link to= "/"> Haz click aqui</Link></p>
+                <p className="h20"><Link to= "/">Ya tienes una cuenta? </Link></p>
               </div>
               <div className="columna columna-2">
                 <input

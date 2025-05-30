@@ -34,6 +34,11 @@ class CreateUserView(APIView):
         telefono_usuario = request.data.get("telefono")
         image_usuario = request.data.get("image")
         
+        if User.objects.filter(username=nombre_usuario).exists():
+            return Response({'error': 'Usuario ya registrado'}, status=400)
+        elif User.objects.filter(email=email_usuario).exists():
+            return Response({'error': 'Email ya registrado'}, status=400)
+        
         usuario = User.objects.create_user(
             username = nombre_usuario,
             first_name = primer_usuario,
