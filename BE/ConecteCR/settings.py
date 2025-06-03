@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'reportes',
     'usuarios',
     'votaciones',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework.authtoken'
+    
 ]
 
 MIDDLEWARE = [
