@@ -7,25 +7,19 @@ function CarouselComp() {
     <div>
       <Carousel>
         <Carousel.Item>
-          <CompImagen src={""} />
-          <Carousel.Caption>
-            <h3>Bienvenido a ConectaCr</h3>
-            <p>Por una comunidad Conectada</p>
-          </Carousel.Caption>
+          <CompImagen src={"../src/img/imagen 1.png"} />
         </Carousel.Item>
         <Carousel.Item>
-          <CompImagen src={""} />
-          <Carousel.Caption>
-            <h3>Bienvenido a ConectaCr</h3>
-            <p>Por una comunidad Conectada</p>
-          </Carousel.Caption>
+          <CompImagen src={"../src/img/imagen 4.png"} />
         </Carousel.Item>
         <Carousel.Item>
-          <CompImagen src={""} />
-          <Carousel.Caption>
-            <h3>Bienvenido a ConectaCr</h3>
-            <p>Por una comunidad Conectada</p>
-          </Carousel.Caption>
+          <CompImagen src={"../src/img/imagen 2.png"} />
+        </Carousel.Item>
+        <Carousel.Item>
+          <CompImagen src={"../src/img/imagen 3.png"} />
+        </Carousel.Item>
+        <Carousel.Item>
+          <CompImagen src={"../src/img/imagen 5.png"} />
         </Carousel.Item>
       </Carousel>
     </div>

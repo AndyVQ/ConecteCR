@@ -12,10 +12,9 @@
   );
   background-size: 200% 200%;
   animation: gradientShift 6s ease infinite;
-  border-radius: 16px;
+  border-radius: 90px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   position: sticky;
-  top: 0;
   z-index: 100;
   transition: box-shadow 0.3s ease;
 }

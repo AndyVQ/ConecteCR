@@ -6,23 +6,25 @@ from rest_framework.response import Response
 from django.contrib.auth.models import User
 from .models import Perfil
 from .serializers import PerfilSerializer
-
-
+from rest_framework_simplejwt.tokens import RefreshToken,AccessToken
 
 class ValidarUsuarioView(APIView):
-     def post(self, request):
+    def post(self, request):
         nombre_usuario = request.data.get("username")
         clave_usuario = request.data.get("password")
 
         usuario = authenticate(username=nombre_usuario, password=clave_usuario)
 
         if usuario is not None:
-            return Response({"exito": "Autenticación exitosa"}, status=status.HTTP_200_OK)
-        
+            refresh = RefreshToken.for_user(usuario)
+            access_token = str(refresh.access_token)
+            refresh_token = str(refresh)
+            return Response({
+                "exito": "Autenticación exitosa",
+                "token":access_token}, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Credenciales incorrectas"}, status=status.HTTP_401_UNAUTHORIZED)
-
-
+        
 class CreateUserView(APIView):
     def post(self,request):
         nombre_usuario = request.data.get("username")
@@ -54,5 +56,3 @@ class CreateUserView(APIView):
             image_usuario=image_usuario 
         )
         return Response({"mensaje": "Usuario creado exitosamente"}, status=status.HTTP_201_CREATED)
-        
-    
