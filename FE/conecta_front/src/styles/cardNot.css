@@ -1,0 +1,53 @@
+/* Estilos para la card */
+.card-noticia {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 350px;
+  margin: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card-noticia:hover {
+  transform: translateY(-5px); /* Efecto de hover */
+}
+
+.imagen-card-noticia {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #eee;
+}
+
+.contenido-card-noticia {
+  padding: 15px;
+}
+
+.titulo-card-noticia {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.descripcion-card-noticia {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.boton-card-noticia {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.boton-card-noticia:hover {
+  background-color: #0056b3;
+}
