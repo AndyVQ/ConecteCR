@@ -12,10 +12,9 @@
   );
   background-size: 200% 200%;
   animation: gradientShift 6s ease infinite;
-  border-radius: 90px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   position: sticky;
-  z-index: 100;
+  z-index: 100px;
   transition: box-shadow 0.3s ease;
 }
 
@@ -36,11 +35,12 @@
 }
 
 .logotipo {
-  width: 120px;
+  width: 140px;
+  margin-left: 20px;
   transition: transform 0.3s ease, filter 0.4s ease;
 }
 .logotipo:hover {
-  transform: scale(1.1) rotate(-2deg);
+  transform: scale(1.4) rotate(-2deg);
 }
 
 .nav-links {
@@ -52,10 +52,10 @@
 }
 .nav-links li a {
   font-family: "Segoe UI", sans-serif;
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: #2c3e50;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.4rem;
   border-radius: 8px;
   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }

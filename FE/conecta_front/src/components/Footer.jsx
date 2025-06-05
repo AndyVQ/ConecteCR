@@ -1,54 +1,21 @@
-import "../styles/register.css"
+import "../styles/footer.css"
 
 const FooterPage = () => {
   return (
-<>
-  <div className="container my-5 ">
-    <footer
-      className="text-center text-lg-start footer-comp"
-    >
-      <div className="container d-flex justify-content-center py-5">
-        <button
-          type="button"
-          className="btn btn-primary btn-lg btn-floating mx-2"
-          style={{ backgroundColor: "#54456b" }}
-        >
-          <i className="fab fa-facebook-f" />
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary btn-lg btn-floating mx-2"
-          style={{ backgroundColor: "#54456b" }}
-        >
-          <i className="fab fa-youtube" />
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary btn-lg btn-floating mx-2"
-          style={{ backgroundColor: "#54456b" }}
-        >
-          <i className="fab fa-instagram" />
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary btn-lg btn-floating mx-2"
-          style={{ backgroundColor: "#54456b" }}
-        >
-          <i className="fab fa-twitter" />
-        </button>
+    <footer className="pie-de-pagina">
+      <div className="contenedor-pie">
+        <div className="enlaces-pie">
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
       </div>
-      <div
-        className="text-center text-white p-3"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-      >
-        © 2020 Copyright:
-        <a className="text-white" href="https://mdbootstrap.com/">
-          MDBootstrap.com
-        </a>
+      <div className="pie-inferior">
+        <p>&copy; 2025 ConecteCR. Todos los derechos reservados.</p>
       </div>
     </footer>
-  </div>
-</>
   );
-};
+}
 export default FooterPage;

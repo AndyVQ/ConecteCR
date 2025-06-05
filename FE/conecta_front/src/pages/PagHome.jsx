@@ -1,7 +1,9 @@
 import React from 'react';
 import Navbar from "../components/NavBar";
 import CarouselComp from "../components/CarouselComp";
-import Cards from "../components/Card";  
+import Cards from "../components/Card"; 
+import FooterHighFashion from "../components/Footer"; 
+
 
 const PagHome = () => {
   return (
@@ -9,16 +11,18 @@ const PagHome = () => {
       <header>
         <Navbar />
       </header>
+      
       <article>
         <CarouselComp />
       </article>
+      
       <div className="pag-Home">
         <Cards />
       </div>
-      <h1>q</h1><h1>q</h1>
-      <h1>q</h1><var>
-        <h1>q</h1>
-      </var>
+      <footer>
+        <FooterHighFashion/>   
+      </footer>
+    
     </>
     
   );

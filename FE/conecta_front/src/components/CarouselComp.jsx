@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import CompImagen from "../components/CompImagen";
+import "../styles/carusel.css";
 
 function CarouselComp() {
   return (
