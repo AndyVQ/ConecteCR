@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
 from .serializers import CampanaSerializer
 from .models import Campana
 
@@ -12,3 +12,8 @@ class CampanaRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = CampanaSerializer
     
     lookup_field = 'id'
+    
+class CampanaListApiView(ListAPIView):
+    queryset = Campana.objects.all()
+    serializer_class = CampanaSerializer
+    

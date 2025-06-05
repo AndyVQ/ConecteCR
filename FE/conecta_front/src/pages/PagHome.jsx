@@ -19,18 +19,10 @@ const PagHome = () => {
       <div className="pag-Home">
         <Cards />
       </div>
-<<<<<<< HEAD
       <footer>
         <FooterHighFashion/>   
       </footer>
     
-=======
-      <h1>q</h1><h1>q</h1>
-      <h1>q</h1>
-      <var>
-        <h1>q</h1>
-      </var>
->>>>>>> e0226f4e9053085ac174d5a540a0cd30ff650081
     </>
     
   );

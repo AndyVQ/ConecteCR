@@ -7,6 +7,7 @@ import PagCampAdmin from "../pages/PagCampAdmin";
 import PagPetAdmin from "../pages/PagPetAdmin";
 import PagVotAdmin from "../pages/PagVotAdmin";
 import PagRepAdmin from "../pages/PagRepAdmin";
+import PagNotAdmin from "../pages/PagNotAdmin";
 
 function Routing() {
   return (
@@ -21,6 +22,8 @@ function Routing() {
           <Route path="/PetAdmin" element={<PagPetAdmin />} />
           <Route path="/VotAdmin" element={<PagVotAdmin />} />
           <Route path="/RepAdmin" element={<PagRepAdmin />} />
+          <Route path="/NotAdmin" element={<PagNotAdmin />} />
+
         </Routes>
       </Router>
     </div>

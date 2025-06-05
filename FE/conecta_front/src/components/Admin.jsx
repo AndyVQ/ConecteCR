@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 function Admin() {
 
 const [campaigns, setCampaigns] = useState([]);
-const [reports, setReports] = useState([]);
+
 
   useEffect(() => { 
 
