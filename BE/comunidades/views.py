@@ -1,6 +1,6 @@
 # Create your views here.
 from django.shortcuts import render
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
 from .serializers import ComunidadesSerializer
 from .models import Comunidades
 
@@ -15,3 +15,7 @@ class ComunidadesRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = ComunidadesSerializer
     
     lookup_field = 'id'
+
+class ComunidadesListApiView(ListAPIView):
+    queryset = Comunidades.objects.all()
+    serializer_class = ComunidadesSerializer
