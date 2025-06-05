@@ -12,7 +12,7 @@ const [campaigns, setCampaigns] = useState([]);
   useEffect(() => { 
 
     async function fetchCampaings() {
-      const campaingsGet = await getData("intCampanas/ campanas_rud/") || [];
+      const campaingsGet = await getData("intCampanas/campanas_get/") || [];
       setCampaigns(campaingsGet); 
     }
     fetchCampaings();
