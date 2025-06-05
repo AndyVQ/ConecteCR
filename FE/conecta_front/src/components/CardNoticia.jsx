@@ -21,6 +21,7 @@ function CardNoticia({ title, description, imageUrl, link }) {
         )}
       </div>
     </div>
+    
   );
 }
 
