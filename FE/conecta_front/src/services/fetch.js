@@ -15,4 +15,25 @@ async function postData(endpoint,data) {
     }
     
 }
-export {postData}
+
+async function getData(endpoint,id="") {
+    try {
+        const response = await fetch(`http://localhost:3001/${endpoint}/${id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error('Error fetching users');
+        }
+        
+        const users = await response.json();
+        return users;
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        throw error;
+    }
+}
+export {postData, getData}

@@ -16,7 +16,8 @@ const PagHome = () => {
         <Cards />
       </div>
       <h1>q</h1><h1>q</h1>
-      <h1>q</h1><var>
+      <h1>q</h1>
+      <var>
         <h1>q</h1>
       </var>
     </>
