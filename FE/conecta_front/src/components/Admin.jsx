@@ -1,19 +1,35 @@
 import React from 'react'
 import "../styles/AdminHome.css"
+import { postData, getData } from "../services/fetch";
+import { useState, useEffect } from "react";
+
 
 function Admin() {
+
+const [campaigns, setCampaigns] = useState([]);
+const [reports, setReports] = useState([]);
+
+  useEffect(() => { 
+
+    async function fetchCampaings() {
+      const campaingsGet = await getData("intCampanas/ campanas_rud/") || [];
+      setCampaigns(campaingsGet); 
+    }
+    fetchCampaings();
+
+  }, []); 
+
   return (
  <div className="admin-home">
-      {/* Panel de Control */}
       <div className="admin-card">
         <div className="admin-card-header">
           <h3>Panel de control</h3>
           <img src="leaf.png" alt="icono" />
         </div>
         <div className="admin-card-body">
-          <p>Campañas activas <span className="admin-value">2</span></p>
-          <p>Firmas Realizadas <span className="admin-value">76</span></p>
-          <p>Propuestas enviadas <span className="admin-value">30</span></p>
+          <p>Campañas Activas <span className="admin-value">2</span></p>
+          <p>Peticiones Realizadas <span className="admin-value">76</span></p>
+          <p>Propuestas Enviadas <span className="admin-value">30</span></p>
           <hr />
           <h4>Campañas</h4>
           <div className="admin-campaign-status">
@@ -27,7 +43,6 @@ function Admin() {
         </div>
       </div>
 
-      {/* Reportes Vecinales */}
       <div className="admin-card">
         <div className="admin-card-header">
           <h3>Reportes vecinales</h3>
@@ -50,7 +65,6 @@ function Admin() {
         </div>
       </div>
 
-      {/* Estadísticas y Fotos */}
       <div className="admin-card">
         <div className="admin-card-header">
           <h3>Estadísticas</h3>
