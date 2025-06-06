@@ -1,7 +1,5 @@
 import React from 'react'
-import "../styles/campAdmin.css";
 
-import { postData } from "../services/fetch";
 
  const campaigns = [
     {
