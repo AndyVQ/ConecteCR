@@ -57,18 +57,6 @@ function NotAdmin() {
           </tbody>
         </table>
       </div>
-
-      <aside className="sidebar">
-        <h3>ConecteCR</h3>
-        <ul>
-          <li>Inicio</li>
-          <li className="active">Campañas</li>
-          <li>Peticiones</li>
-          <li>Votaciones</li>
-          <li>Estadísticas</li>
-          <li>Fotografias</li>
-        </ul>
-      </aside>
     </div>
   );
 };

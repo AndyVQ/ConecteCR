@@ -1,16 +1,20 @@
-import React from "react";
-import Navbar from "../components/NavBar";
+
+import AdminNavBar from "../components/AdminNavBar";  
+import FooterHighFashion from "../components/Footer";
 import NotAdmin from "../components/NotAdmin";
 
 const PagNotAdmin = () => {
   return (
     <>
     <header>
-        <Navbar />
+        <AdminNavBar />
     </header>
     <div className="pag-Admin">
         <NotAdmin />
     </div>
+      <footer>
+        <FooterHighFashion />
+      </footer>
     </>
   );
 };

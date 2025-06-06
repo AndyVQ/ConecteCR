@@ -1,16 +1,19 @@
 
 import RepAdmin from "../components/PetAdmin";
-import Navbar from "../components/NavBar";
-
+import AdminNavBar from "../components/AdminNavBar";  
+import FooterHighFashion from "../components/Footer";
 const PagRepAdmin = () => {
   return (
     <>
     <header>
-        <Navbar />
+        <AdminNavBar />
     </header>
     <div className="pag-Admin">
         <RepAdmin />
     </div>
+      <footer>
+        <FooterHighFashion />
+      </footer>
     </>
   );
 };
