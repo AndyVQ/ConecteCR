@@ -1,15 +1,19 @@
 import Admin from "../components/Admin";
-import Navbar from "../components/NavBar";
+import AdminNavBar from "../components/AdminNavBar";  
+import FooterHighFashion from "../components/Footer";
 
 const PagAdmin = () => {
   return (
     <>
       <header>
-        <Navbar />
+        <AdminNavBar />
       </header>
       <div className="pag-Admin">
         <Admin />
       </div>
+      <footer>
+        <FooterHighFashion />
+      </footer>
     </>
   );
 };

@@ -76,6 +76,14 @@ hr {
   border-radius: 8px;
 }
 
+.admin-search-1 {
+  width: 30%;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
 .admin-report {
   display: flex;
   justify-content: space-between;

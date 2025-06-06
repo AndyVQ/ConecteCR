@@ -6,18 +6,42 @@ import { useState, useEffect } from "react";
 
 function Admin() {
 
-const [campaigns, setCampaigns] = useState([]);
+const [campaigns, setCampaigns] = useState(0);
+const [petitions, setPetitions] = useState(0);
+const [votes, setVotes] = useState(0);
+const [reports, setReports] = useState([]);
+const [search, setSearch] = useState("")
 
 
   useEffect(() => { 
 
     async function fetchCampaings() {
       const campaingsGet = await getData("intCampanas/campanas_get/") || [];
-      setCampaigns(campaingsGet); 
+      setCampaigns(campaingsGet.length); 
     }
     fetchCampaings();
+    async function fetchPetitions() {
+      const petitionsGet = await getData("intPeticiones/peticiones_get/") || [];
+      setPetitions(petitionsGet.length); 
+    }
+    fetchPetitions();
+    async function fetchVotes() {
+      const votesGet = await getData("intVotaciones/votaciones_get/") || [];
+      setVotes(votesGet.length); 
+    }
+    fetchVotes(); 
 
-  }, []); 
+    async function fetchReports() {
+      const reportsGet = await getData("intReportes/reportes_get/") || [];
+      setReports(reportsGet); 
+    }
+    fetchReports(); 
+    
+  }, []);  
+
+    const filtarReports = reports.filter(report =>
+    report.nombre_reporte.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
  <div className="admin-home">
@@ -27,9 +51,9 @@ const [campaigns, setCampaigns] = useState([]);
           <img src="leaf.png" alt="icono" />
         </div>
         <div className="admin-card-body">
-          <p>Campañas Activas <span className="admin-value">2</span></p>
-          <p>Peticiones Realizadas <span className="admin-value">76</span></p>
-          <p>Propuestas Enviadas <span className="admin-value">30</span></p>
+          <p>Campañas Activas <span className="admin-value">{campaigns}</span></p>
+          <p>Peticiones Realizadas <span className="admin-value">{petitions}</span></p>
+          <p>Votaciones Activas <span className="admin-value">{votes}</span></p>
           <hr />
           <h4>Campañas</h4>
           <div className="admin-campaign-status">
@@ -49,19 +73,16 @@ const [campaigns, setCampaigns] = useState([]);
           <img src="leaf.png" alt="icono" />
         </div>
         <div className="admin-card-body">
-          <input type="text" placeholder="Buscar reportes" className="admin-search" />
-          <div className="admin-report">
-            <p>Postes de luz defectuosos</p><span>4 días</span>
-          </div>
-          <div className="admin-report">
-            <p>Basura acumulada</p><span>6 días</span>
-          </div>
-          <div className="admin-report">
-            <p>Calles en mal estado</p><span>2 días</span>
-          </div>
-          <div className="admin-report">
-            <p>Gatos abandonados</p><span>4 días</span>
-          </div>
+          <input type="text" placeholder="Buscar reportes" className="admin-search" 
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          />
+          {filtarReports.map((report, index) => (
+            <div key={index} className="admin-report">
+              <p>{report.nombre_reporte}</p>
+              <span>{new Date(report.fecha_reporte).toLocaleDateString()}</span>
+            </div>
+          ))}
         </div>
       </div>
 

@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
+
 const Login = () => {
   const [usuario, setUsuario] = useState("");
   const [clave, setClave] = useState("");
