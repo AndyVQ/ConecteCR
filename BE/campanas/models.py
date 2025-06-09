@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Campana(models.Model):
@@ -10,3 +11,4 @@ class Campana(models.Model):
     fecha_campana = models.DateField(null=False,blank=False)
     imagen_campana = models.TextField()
     comentario_campana = models.CharField(max_length=100) 
+    

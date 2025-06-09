@@ -16,20 +16,21 @@ function RepAdmin() {
       fetchVotes();
     }, []);
 
-  const filtarReporte = report.filter(vote =>
-  String(vote.nombre_votacion || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(vote.usuario || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(vote.comunidad || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(vote.descripcion_votacion || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(vote.fecha_votacion || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(vote.comentario_votacion || "").toLowerCase().includes(search.toLowerCase())
+  const filtarReporte = reports.filter(report =>
+  String(report.nombre_reporte || "").toLowerCase().includes(search.toLowerCase()) ||
+  String(report.usuario || "").toLowerCase().includes(search.toLowerCase()) ||
+  String(report.comunidad || "").toLowerCase().includes(search.toLowerCase()) ||
+  String(report.descripcion_reporte || "").toLowerCase().includes(search.toLowerCase()) ||
+  String(report.fecha_reporte || "").toLowerCase().includes(search.toLowerCase()) ||
+  String(report.comentario_votacion || "").toLowerCase().includes(search.toLowerCase())
+
 );
   
   return (
      <div className="dashboard-container">
       <div className="main-content">
         <h2>Campañas</h2>
-        <input type="text" placeholder="Buscar Votaciones" className="admin-search-1"
+        <input type="text" placeholder="Buscar Reportes" className="admin-search-1"
         value={search}
         onChange={e => setSearch(e.target.value)}/>
         <table>
@@ -46,15 +47,15 @@ function RepAdmin() {
             </tr>
           </thead>
           <tbody>
-            {filtarVotacion.map((votacion, index) => (
+            {filtarReporte.map((reporte, index) => (
               <tr key={index}>
-                <td>{votacion.usuario}</td>
-                <td>{votacion.comunidad}</td>
-                <td>{votacion.nombre_votacion}</td>
-                <td>{votacion.descripcion_votacion}</td>
-                <td>{votacion.fecha_votacion}</td>
-                <td>{votacion.imagen_votacion}</td>
-                <td>{votacion.comentario_votacion}</td>
+                <td>{reporte.usuario}</td>
+                <td>{reporte.comunidad}</td>
+                <td>{reporte.nombre_reporte}</td>
+                <td>{reporte.descripcion_reporte}</td>
+                <td>{reporte.fecha_reporte}</td>
+                <td>{reporte.imagen_reporte}</td>
+                <td>{reporte.comentario_reporte}</td>
                 <td>
                   <button>👁️</button>
                   <button>✏️</button>

@@ -1,12 +1,16 @@
 import React from 'react'
 import "../styles/campAdmin.css";
 import { useState, useEffect } from "react";
-import { getData } from "../services/fetch";
+import { getData, deleteData } from "../services/fetch";
+import CampModal from './CampModal';
 
 
 function CampAdmin() {
   const [campaigns, setCampaigns] = useState([]);
   const [search, setSearch] = useState("")
+  const [reload, setReload] = useState(false);
+  const [abrirModal, setAbrirModal] = useState(false);
+  const [infoCampana, setInfoCampana] = useState(null)
 
   useEffect(() => {
     async function fetchCampaigns() {
@@ -26,11 +30,27 @@ const filtarCampana = campaigns.filter(campaign =>
   String(campaign.comentario_campana || "").toLowerCase().includes(search.toLowerCase())
 );
 
+function abrirModalCampana(campana) {
+  setInfoCampana(campana);
+  setAbrirModal(true);
+}
+
+function cerrarModalCampana() {
+  setInfoCampana(null);
+  setAbrirModal(false);
+}
+
+async function deleteProd(id) { 
+  await deleteData("intCampanas/campanas_rud", id);
+  setReload(!reload);
+}
+
+
   return (
      <div className="dashboard-container">
       <div className="main-content">
         <h2>Campañas</h2>
-        <input type="text" placeholder="Buscar campañas" className="admin-search-1"
+        <input type="text" placeholder="Buscar Campañas" className="admin-search-1"
         value={search}
         onChange={e => setSearch(e.target.value)}/>
         <table>
@@ -51,7 +71,7 @@ const filtarCampana = campaigns.filter(campaign =>
             {filtarCampana.map((campaign, index) => (
               <tr key={index}>
                 <td>{campaign.usuario}</td>
-                <td>{campaign.comunidad}</td>
+                <td>{campaign.nombre_comunidad}</td>
                 <td>{campaign.nombre_campana}</td>
                 <td>{campaign.descripcion_campana}</td>
                 <td>{campaign.fecha_campana}</td>
@@ -61,14 +81,17 @@ const filtarCampana = campaigns.filter(campaign =>
               
                 <td>
                   <button>👁️</button>
-                  <button>✏️</button>
-                  <button>🗑️</button>
+                  <button onClick={() => abrirModalCampana(campaign)}>✏️</button>
+                  <button onClick={() => deleteProd(campaign.id)}>🗑️</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-      </div>
+        {abrirModal && 
+        <CampModal abrirModal={abrirModal} cerrarModal={cerrarModalCampana} campanas={infoCampana}/>
+        }
+        </div>
     </div>
   );
 };

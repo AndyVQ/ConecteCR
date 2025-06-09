@@ -1,8 +1,8 @@
 import React from 'react'
 import "../styles/campAdmin.css";
 import { useState, useEffect } from "react";
-import { getData } from "../services/fetch";
-
+import { getData, deleteData } from "../services/fetch";
+import PetModal from './PetModal';
 
 function PetAdmin() {
     const [petitions, setPetitions] = useState([]);
