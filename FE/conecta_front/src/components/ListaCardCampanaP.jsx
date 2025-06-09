@@ -2,7 +2,7 @@ import CardCampanaP from "./CardCampanaP";
 import { getData } from "../services/fetch";
 import { useState, useEffect } from "react";
 
-const ListaCardCampanaP =  () => {
+const ListaCardCampanaP = () => {
   const [campanas, setCampanas] = useState([]);
 
   useEffect(() => {
@@ -16,13 +16,15 @@ const ListaCardCampanaP =  () => {
   return (
     <>
       {campanas.map((Camp) => {
+        return(
         <CardCampanaP
-          titulo={Camp.titulo}
-          descripcion={Camp.descripcion}
-          direccion={Camp.direccion}
-          fecha={Camp.fecha}
-          comunidad={Camp.comunidad}
-        />;
+          titulo={Camp.nombre_campana}
+          descripcion={Camp.descripcion_campana}
+          direccion={Camp.direccion_campana}
+          fecha={Camp.fecha_campana}
+          comunidad={Camp.nombre_comunidad}
+        />
+        )
       })}
     </>
   );

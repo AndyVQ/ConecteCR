@@ -1,5 +1,5 @@
 import Admin from "../components/Admin";
-import AdminNavBar from "../components/AdminNavBar";  
+import AdminNavBar from "../components/AdminNavBar";
 import FooterHighFashion from "../components/Footer";
 
 const PagAdmin = () => {

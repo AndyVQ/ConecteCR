@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/ventanaCampana.css";
-import { getData,postData } from "../services/fetch";
+import { getData, postData } from "../services/fetch";
 
 function VentanaCampana() {
   const [comunidades, setComunidades] = useState([]);
@@ -25,6 +25,9 @@ function VentanaCampana() {
       descripcion_campana: descripcion,
       direccion_campana: direccion,
       fecha_campana: fecha,
+      imagen_campana: "abc",
+      comentario_campana: "abc",
+      usuario: 1,
     };
     await postData("intCampanas/campanas/", nuevaCampana);
   };

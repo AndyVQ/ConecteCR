@@ -1,6 +1,4 @@
-import "../styles/CardCampana.css";
-
-const CardCampanaP = ({titulo,descripcion,comunidad,fecha,direccion})=>{
+const CardCampanaP = ({ titulo, descripcion, comunidad, fecha, direccion }) => {
   return (
     <div className="card-campana">
       <h3 className="titulo-campana">{titulo}</h3>
@@ -10,6 +8,6 @@ const CardCampanaP = ({titulo,descripcion,comunidad,fecha,direccion})=>{
       <p className="comunidad-campana">Comunidad: {comunidad}</p>
     </div>
   );
-}
+};
 
 export default CardCampanaP;
