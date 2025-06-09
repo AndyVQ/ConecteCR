@@ -26,7 +26,7 @@ function VentanaCampana() {
       direccion_campana: direccion,
       fecha_campana: fecha,
     };
-    await postData("comunidades/comunidades_create/", nuevaCampana);
+    await postData("intCampanas/campanas/", nuevaCampana);
   };
 
   return (

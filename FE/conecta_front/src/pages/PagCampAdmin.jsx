@@ -1,7 +1,6 @@
 import CampAdmin from "../components/CampAdmin";
-import AdminNavBar from "../components/AdminNavBar";  
+import AdminNavBar from "../components/AdminNavBar";
 import FooterHighFashion from "../components/Footer";
-
 
 const PagAdminCamp = () => {
   return (
