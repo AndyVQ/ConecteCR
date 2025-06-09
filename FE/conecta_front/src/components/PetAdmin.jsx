@@ -7,6 +7,9 @@ import PetModal from './PetModal';
 function PetAdmin() {
     const [petitions, setPetitions] = useState([]);
     const [search, setSearch] = useState("")
+    const [reload, setReload] = useState(false);
+    const [abrirModal, setAbrirModal] = useState(false);
+    const [infoPeticion, setInfoPeticion] = useState(null)
   
     useEffect(() => {
       async function fetchPetitions() {
@@ -24,6 +27,21 @@ function PetAdmin() {
   String(petition.fecha_peticion || "").toLowerCase().includes(search.toLowerCase()) ||
   String(petition.comentario_peticion || "").toLowerCase().includes(search.toLowerCase())
 );
+
+function abrirModalPeticion(peticion) {
+  setInfoPeticion(peticion);
+  setAbrirModal(true);
+}
+
+function cerrarModalPeticion() {
+  setInfoPeticion(null);
+  setAbrirModal(false);
+}
+
+async function deleteProd(id) { 
+  await deleteData("intPeticiones/peticiones_rud", id);
+  setReload(!reload);
+}
   
   return (
      <div className="dashboard-container">
@@ -49,7 +67,7 @@ function PetAdmin() {
             {filtarPeticion.map((peticion, index) => (
               <tr key={index}>
                 <td>{peticion.usuario}</td>
-                <td>{peticion.comunidad}</td>
+                <td>{peticion.nombre_comunidad}</td>
                 <td>{peticion.nombre_peticion}</td>
                 <td>{peticion.descripcion_peticion}</td>
                 <td>{peticion.fecha_peticion}</td>
@@ -57,13 +75,16 @@ function PetAdmin() {
                 <td>{peticion.comentario_peticion}</td>
                 <td>
                   <button>👁️</button>
-                  <button>✏️</button>
-                  <button>🗑️</button>
+                  <button onClick={() => abrirModalPeticion(peticion)}>✏️</button>
+                  <button onClick={() => deleteProd(peticion.id)}>🗑️</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {abrirModal && 
+        <PetModal abrirModal={abrirModal} cerrarModal={cerrarModalPeticion} peticiones={infoPeticion}/>
+        }
       </div>
     </div>
   );
