@@ -9,17 +9,17 @@ const Navbar = () => {
         </section>
         <ul className="nav-links">
           <li>
-            <a href="/home">Campañas</a>
+            <a href="/PagCampana">Campañas</a>
 
           </li>
           <li>
-            <a href="/User">Peticiones</a>
+            <a href="/PagPeti">Peticiones</a>
           </li>
           <li>
-            <a href="/calificaciones">Votaciones</a>
+            <a href="/PagVota">Votaciones</a>
           </li>
           <li>
-            <a href="/Contacto">Reportes</a>
+            <a href="/PagReport">Reportes</a>
           </li>
         </ul>
       </nav>

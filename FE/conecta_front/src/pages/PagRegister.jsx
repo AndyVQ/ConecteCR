@@ -5,10 +5,10 @@ const PagRegister = () => {
   return (
     <>
       <div>
-        <FormularioRegister />  
+        <FormularioRegister />
       </div>
       <footer>
-        <FooterHighFashion/>   
+        <FooterHighFashion />
       </footer>
     </>
   );

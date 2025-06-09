@@ -1,5 +1,5 @@
 import Login from "../components/login";
-import "../styles/login.css"
+import "../styles/login.css";
 const PagLogin = () => {
   return (
     <>
