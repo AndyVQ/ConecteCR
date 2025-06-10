@@ -70,7 +70,7 @@ async function deleteProd(id) {
           <tbody>
             {filtarCampana.map((campaign, index) => (
               <tr key={index}>
-                <td>{campaign.usuario}</td>
+                <td>{campaign.nombre_usuario}</td>
                 <td>{campaign.nombre_comunidad}</td>
                 <td>{campaign.nombre_campana}</td>
                 <td>{campaign.descripcion_campana}</td>

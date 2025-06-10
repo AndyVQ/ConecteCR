@@ -67,7 +67,7 @@ async function deleteProd(id) {
           <tbody>
             {filtarReporte.map((reporte, index) => (
               <tr key={index}>
-                <td>{reporte.usuario}</td>
+                <td>{reporte.nombre_usuario}</td>
                 <td>{reporte.nombre_comunidad}</td>
                 <td>{reporte.nombre_reporte}</td>
                 <td>{reporte.descripcion_reporte}</td>

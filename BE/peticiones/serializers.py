@@ -5,7 +5,7 @@ from rest_framework import serializers
 
 class PeticionesSerializer(ModelSerializer):
     nombre_comunidad = serializers.CharField(source="comunidad.nombre_comunidad", read_only=True)
-    usuario = serializers.CharField(source="usuario.usuario", read_only=True)
+    nombre_usuario = serializers.CharField(source="usuario.usuario.username", read_only=True)
     class Meta:
         model = Peticiones
-        fields = "__all__"
+        fields = ["id", "nombre_usuario", "usuario", "comunidad", "nombre_peticion", "descripcion_peticion", "fecha_peticion", "imagen_peticion", "comentario_peticion", "nombre_comunidad"]
