@@ -10,14 +10,9 @@ import PagRepAdmin from "../pages/PagRepAdmin";
 import PagNotAdmin from "../pages/PagNotAdmin";
 import PagCrearCampana from "../pages/PagCrearCampana";
 import PagCampa from "../pages/PagCampa";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import PagAdminCamp from "../pages/PagCampAdmin";
-import PagLogin from "../pages/PagLogin";
-import PagRegister from "../pages/PagRegister";
-import PagHome from "../pages/PagHome";
-import PagAdmin from "../pages/PagAdmin";
 import PagCampModal from "../pages/PagCampModal";
 import PagPetModal from "../pages/PagPetModal";
+import PagVotModal from "../pages/PagVotModal";
 function Routing() {
   return (
     <div>
@@ -36,6 +31,7 @@ function Routing() {
           <Route path="/Campañas" element={<PagCampa />} />
           <Route path="/CampModal" element={<PagCampModal />} />
           <Route path="/PetModal" element={<PagPetModal/>} />
+          <Route path="/VotModal" element={<PagVotModal />} />
         </Routes>
       </Router>
     </div>
