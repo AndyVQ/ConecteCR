@@ -1,5 +1,5 @@
 
-import RepAdmin from "../components/PetAdmin";
+import RepAdmin from "../components/RepAdmin";
 import AdminNavBar from "../components/AdminNavBar";  
 import FooterHighFashion from "../components/Footer";
 const PagRepAdmin = () => {
