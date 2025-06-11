@@ -7,4 +7,4 @@ class CampanaSerializer(ModelSerializer):
     nombre_usuario = serializers.CharField(source="usuario.usuario.username", read_only=True)
     class Meta:
         model = Campana
-        fields = ["id", "nombre_usuario", "usuario", "comunidad", "nombre_campana", "descripcion_campana", "direccion_campana", "fecha_campana", "imagen_campana", "comentario_campana", "nombre_comunidad"]
+        fields = ["id", "nombre_usuario", "usuario", "comunidad", "nombre_campana", "descripcion_campana", "direccion_campana", "fecha_campana", "imagen_campana", "nombre_comunidad"]
