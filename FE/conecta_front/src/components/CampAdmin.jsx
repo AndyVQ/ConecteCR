@@ -18,7 +18,7 @@ function CampAdmin() {
       setCampaigns(campaignsGet);
     }
     fetchCampaigns();
-  }, []);
+  }, [campaigns]);
 
 const filtarCampana = campaigns.filter(campaign =>
   String(campaign.nombre_campana || "").toLowerCase().includes(search.toLowerCase()) ||
@@ -38,6 +38,7 @@ function abrirModalCampana(campana) {
 function cerrarModalCampana() {
   setInfoCampana(null);
   setAbrirModal(false);
+  setReload(!reload)
 }
 
 async function deleteProd(id) { 

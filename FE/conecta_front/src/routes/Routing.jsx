@@ -8,7 +8,6 @@ import PagPetAdmin from "../pages/PagPetAdmin";
 import PagVotAdmin from "../pages/PagVotAdmin";
 import PagRepAdmin from "../pages/PagRepAdmin";
 import PagNotAdmin from "../pages/PagNotAdmin";
-import PagCrearCampana from "../pages/PagCrearCampana";
 import PagCampa from "../pages/PagCampa";
 import PagCampModal from "../pages/PagCampModal";
 import PagPetModal from "../pages/PagPetModal";
@@ -29,7 +28,6 @@ function Routing() {
           <Route path="/VotAdmin" element={<PagVotAdmin />} />
           <Route path="/RepAdmin" element={<PagRepAdmin />} />
           <Route path="/NotAdmin" element={<PagNotAdmin />} />
-          <Route path="/CrearCampana" element={<PagCrearCampana />} />
           <Route path="/Campañas" element={<PagCampa />} />
           <Route path="/CampModal" element={<PagCampModal />} />
           <Route path="/PetModal" element={<PagPetModal/>} />
