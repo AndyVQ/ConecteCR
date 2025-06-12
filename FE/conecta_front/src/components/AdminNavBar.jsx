@@ -25,6 +25,9 @@ const AdminNavBar = () => {
             <a href="/RepAdmin">Reportes</a>
           </li>
           <li>
+            <a href="/NotAdmin">Noticias</a>
+          </li>
+          <li>
             <a><CgProfile /> Admin</a>
           </li>
 

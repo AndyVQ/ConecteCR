@@ -5,51 +5,33 @@ import Modal from 'react-bootstrap/Modal';
 import { useEffect } from "react";
 import { getData, updateData } from "../services/fetch";
 
-function RepModal({ abrirModal, cerrarModal, reportes }) {   
+function RepModal({ abrirModal, cerrarModal, noticias }) {   
 
-    const [reports, setReports] = useState([]);
-    const [comunidades, setComunidades] = useState([]);
-    const [nombreReporteEditar, setNombreReporteEditar] = useState("");
-    const [descripcionReporteEditar, setDescripcionReporteEditar] = useState("");
-    const [direccionReporteEditar, setDireccionReporteEditar] = useState("");
-    const [imagenReporteEditar, setImagenReporteEditar] = useState("");
-    const [comentarioReporteEditar, setComentarioReporteEditar] = useState("");
-    const [comunidadReporteEditar, setComunidadReporteEditar] = useState("");
-
+    const [news, setNews] = useState([]);
+    const [descripcionNoticiaEditar, setDescripcionNoticiaEditar] = useState("");
+    const [imagenNoticiaEditar, setImagenNoticiaEditar] = useState("");
+    const [titularNoticiaEditar, setTitularNoticiaEditar] = useState("");
     useEffect(() => { 
-      if(reportes){
-        setComunidadReporteEditar(
-          reportes.comunidad ? Number(reportes.comunidad) : ""
-        );
-        setNombreReporteEditar(reportes.nombre_Votacion);
-        setDescripcionReporteEditar(reportes.descripcion_Votacion);
-        setDireccionReporteEditar(reportes.direccion_campana);
-        setImagenReporteEditar(reportes.imagen_Votacion);
-        setComentarioReporteEditar(reportes.comentario_Votacion);
+      if(noticias){
+        setDescripcionNoticiaEditar(noticias.descripcion_noticia);
+        setImagenNoticiaEditar(noticias.imagen_noticia);
+        setTitularNoticiaEditar(noticias.titular_notica);
       } 
 
-      async function fetchCampaigns() {
-        const reportsGet = await getData("intReportes/reportes_get/") || [];
-        setReports(reportsGet);
+      async function fetchNews() {
+        const newsGet = await getData("intNoticias/noticia_create/") || [];
+        setNews(newsGet);
       }
-      fetchCampaigns();
-      async function fetchComunidades() {
-        const comunidadesGet = await getData("comunidades/comunidades_get/") || [];
-        setComunidades(comunidadesGet);
-      }
-      fetchComunidades(); 
-    }, [reportes]);
+      fetchNews();
+    }, [noticias]);
 
     async function editProd(id) {  
       let editInfo = { 
-        "comunidad": comunidadReporteEditar,
-        "nombre_reporte": nombreReporteEditar,
-        "descripcion_reporte": descripcionReporteEditar,
-        "direccion_reporte": direccionReporteEditar,
-        "imagen_reporte": imagenReporteEditar, 
-        "comentario_reporte": comentarioReporteEditar
+        "descripcion_noticia": descripcionNoticiaEditar,
+        "imagen_noticia": imagenNoticiaEditar,
+        "titular_notica": titularNoticiaEditar,
       };
-      await updateData(editInfo,"intReportes/reportes_rud", id);
+      await updateData(editInfo,"intNoticias/noticias_rud", id);
     }
 
     return (

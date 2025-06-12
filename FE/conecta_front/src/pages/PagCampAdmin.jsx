@@ -4,16 +4,11 @@ import FooterHighFashion from "../components/Footer";
 import { useEffect, useState } from "react";
 import "../styles/PagCampAdmin.css";
 import AggCampModal from "../components/AggCampModal";
+
 const PagAdminCamp = () => {
   const [abrirModal, setAbrirModal] = useState(false);
 
-  useEffect(()=>{
-  },[])
-
-
   function abrirModalAgg() {
-    console.log("aaaa");
-    
     setAbrirModal(true);
   }
 

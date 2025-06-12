@@ -8,6 +8,6 @@ urlpatterns = [
     path("intReportes/",include("reportes.urls")),
     path("intVotaciones/",include("votaciones.urls")),
     path("comunidades/",include("comunidades.urls")),
-    path("intPeticiones/",include("peticiones.urls"))
-    
+    path("intPeticiones/",include("peticiones.urls")),
+    path("intNoticias/",include("noticias.urls")),   
 ]

@@ -11,7 +11,7 @@ function PetModal({ abrirModal, cerrarModal, peticiones }) {
   const [nombrePeticionEditar, setNombrePeticionEditar] = useState("");
   const [descripcionPeticionEditar, setDescripcionPeticionEditar] = useState("");
   const [comunidadPeticionEditar, setComunidadPeticionEditar] = useState("");
-  // Estado para tener el estado de la publicación (se inicializa en pendiente)
+
   useEffect(() => {
     if (peticiones) {
       setComunidadPeticionEditar(
