@@ -6,11 +6,10 @@ import { useEffect } from "react";
 import { getData, updateData } from "../services/fetch";
 
 function PetModal({ abrirModal, cerrarModal, peticiones }) {
-  const [petitions, setPetitions] = useState([]);
+  const [peticiones, setPeticiones] = useState([]);
   const [comunidades, setComunidades] = useState([]);
   const [nombrePeticionEditar, setNombrePeticionEditar] = useState("");
-  const [descripcionPeticionEditar, setDescripcionPeticionEditar] =
-    useState("");
+  const [descripcionPeticionEditar, setDescripcionPeticionEditar] = useState("");
   const [comunidadPeticionEditar, setComunidadPeticionEditar] = useState("");
   // Estado para tener el estado de la publicación (se inicializa en pendiente)
   useEffect(() => {
@@ -25,9 +24,9 @@ function PetModal({ abrirModal, cerrarModal, peticiones }) {
     }
 
     async function fetchCampaigns() {
-      const petitionsGet =
+      const peticionesGet =
         (await getData("intPeticiones/peticiones_get/")) || [];
-      setPetitions(petitionsGet);
+      setPeticiones(peticionesGet);
     }
     fetchCampaigns();
     async function fetchComunidades() {
