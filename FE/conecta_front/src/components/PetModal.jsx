@@ -8,25 +8,20 @@ import { getData, updateData } from "../services/fetch";
 function PetModal({ abrirModal, cerrarModal, peticiones }) {
   const [comunidades, setComunidades] = useState([]);
   const [nombrePeticionEditar, setNombrePeticionEditar] = useState("");
-  const [descripcionPeticionEditar, setDescripcionPeticionEditar] = useState("");
+  const [descripcionPeticionEditar, setDescripcionPeticionEditar] =
+    useState("");
   const [comunidadPeticionEditar, setComunidadPeticionEditar] = useState("");
   const [estadoPeticionEditar, setEstadoPeticionEditar] = useState("pendiente");
-  // Estado para tener el estado de la publicación (se inicializa en pendiente)
+
   useEffect(() => {
     if (peticiones) {
       setComunidadPeticionEditar(
-        peticiones.comunidad ? Number(peticiones.comunidad):"");
+        peticiones.comunidad ? Number(peticiones.comunidad) : ""
+      );
       setNombrePeticionEditar(peticiones.nombre_peticion);
       setDescripcionPeticionEditar(peticiones.descripcion_peticion);
       setEstadoPeticionEditar(peticiones.estado_peticion || "pendiente");
     }
-
-    async function fetchCampaigns() {
-      const peticionessGet =
-        (await getData("intPeticiones/peticiones_get/")) || [];
-      setPetitions(peticionessGet);
-    }
-    fetchCampaigns();
     async function fetchComunidades() {
       const comunidadesGet =
         (await getData("comunidades/comunidades_get/")) || [];
@@ -40,7 +35,7 @@ function PetModal({ abrirModal, cerrarModal, peticiones }) {
       comunidad: comunidadPeticionEditar,
       nombre_peticion: nombrePeticionEditar,
       descripcion_peticion: descripcionPeticionEditar,
-       estado_peticion: estadoPeticionEditar,
+      estado_peticion: estadoPeticionEditar,
     };
     console.log("editInfo a enviar:", editInfo);
     await updateData(editInfo, "intPeticiones/peticiones_rud", id);
@@ -94,13 +89,14 @@ function PetModal({ abrirModal, cerrarModal, peticiones }) {
                 onChange={(e) => setDescripcionPeticionEditar(e.target.value)}
               />
             </Form.Group>
-             <Form.Group className="mb-3" controlId="estadoSelect">
+            <Form.Group className="mb-3" controlId="estadoSelect">
               <Form.Label>Estado</Form.Label>
               <select
                 name="Estado"
                 className="form-control"
                 value={estadoPeticionEditar}
-                onChange={(e) => setEstadoPeticionEditar(e.target.value)}>
+                onChange={(e) => setEstadoPeticionEditar(e.target.value)}
+              >
                 <option value="pendiente">pendiente</option>
                 <option value="rechazada">rechazada</option>
                 <option value="aprobada">aprobada</option>
