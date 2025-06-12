@@ -48,7 +48,7 @@ const [search, setSearch] = useState("")
       <div className="admin-card">
         <div className="admin-card-header">
           <h3>Panel de control</h3>
-          <img src="leaf.png" alt="icono" />
+          <img src="\src\img\logo sin fondo.png" alt="Logo ConecteCR"/>
         </div>
         <div className="admin-card-body">
           <p>Campañas Activas <span className="admin-value">{campaigns}</span></p>
@@ -70,7 +70,7 @@ const [search, setSearch] = useState("")
       <div className="admin-card">
         <div className="admin-card-header">
           <h3>Reportes vecinales</h3>
-          <img src="leaf.png" alt="icono" />
+          <img src="\src\img\logo sin fondo.png" alt="Logo ConecteCR"/>
         </div>
         <div className="admin-card-body">
           <input type="text" placeholder="Buscar reportes" className="admin-search" 
@@ -89,14 +89,14 @@ const [search, setSearch] = useState("")
       <div className="admin-card">
         <div className="admin-card-header">
           <h3>Estadísticas</h3>
-          <img src="leaf.png" alt="icono" />
+          <img src="\src\img\logo sin fondo.png" alt="Logo ConecteCR"/>
         </div>
         <div className="admin-card-body">
           <div className="admin-chart-placeholder">[Gráfico aquí]</div>
           <h4>Fotos compartidas</h4>
           <div className="admin-photo-carousel">
             <button>{'<'}</button>
-            <img src="photo.png" alt="Foto" />
+          <img src="\src\img\logo sin fondo.png" alt="Logo ConecteCR"/>
             <button>{'>'}</button>
           </div>
         </div>
