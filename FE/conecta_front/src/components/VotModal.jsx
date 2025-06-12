@@ -12,7 +12,6 @@ function VotModal({ abrirModal, cerrarModal, votaciones }) {
     const [nombreVotacionEditar, setNombreVotacionEditar] = useState("");
     const [descripcionVotacionEditar, setDescripcionVotacionEditar] = useState("");
     const [imagenVotacionEditar, setImagenVotacionEditar] = useState("");
-    const [comentarioVotacionEditar, setComentarioVotacionEditar] = useState("");
     const [comunidadVotacionEditar, setComunidadVotacionEditar] = useState("");
 
     useEffect(() => { 
@@ -23,7 +22,6 @@ function VotModal({ abrirModal, cerrarModal, votaciones }) {
         setNombreVotacionEditar(votaciones.nombre_Votacion);
         setDescripcionVotacionEditar(votaciones.descripcion_Votacion);
         setImagenVotacionEditar(votaciones.imagen_Votacion);
-        setComentarioVotacionEditar(votaciones.comentario_Votacion);
       } 
 
       async function fetchCampaigns() {
@@ -44,7 +42,6 @@ function VotModal({ abrirModal, cerrarModal, votaciones }) {
         "nombre_votacion": nombreVotacionEditar,
         "descripcion_votacion": descripcionVotacionEditar,
         "imagen_votacion": imagenVotacionEditar, 
-        "comentario_votacion": comentarioVotacionEditar
       };
       await updateData(editInfo,"intVotaciones/votaciones_rud", id);
     }
@@ -101,16 +98,6 @@ function VotModal({ abrirModal, cerrarModal, votaciones }) {
                   autoFocus
                   value={imagenVotacionEditar || ""}
                   onChange={(e) => setImagenVotacionEditar(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label>Comentario</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Comentario"
-                  autoFocus
-                  value={comentarioVotacionEditar || ""}
-                  onChange={(e) => setComentarioVotacionEditar(e.target.value)}
                 />
               </Form.Group>
             </Form>

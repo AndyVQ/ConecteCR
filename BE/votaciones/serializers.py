@@ -7,4 +7,4 @@ class VotacionesSerializer(ModelSerializer):
     nombre_usuario = serializers.CharField(source="usuario.usuario.username", read_only=True)
     class Meta:
         model = Votaciones
-        fields = ["id","nombre_usuario", "usuario", "comunidad", "nombre_votacion", "descripcion_votacion", "fecha_votacion", "imagen_votacion", "comentario_votacion", "nombre_comunidad"]
+        fields = ["id","nombre_usuario", "usuario", "comunidad", "nombre_votacion", "descripcion_votacion", "fecha_votacion", "imagen_votacion", "nombre_comunidad"]

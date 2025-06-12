@@ -13,7 +13,6 @@ function RepModal({ abrirModal, cerrarModal, reportes }) {
     const [descripcionReporteEditar, setDescripcionReporteEditar] = useState("");
     const [direccionReporteEditar, setDireccionReporteEditar] = useState("");
     const [imagenReporteEditar, setImagenReporteEditar] = useState("");
-    const [comentarioReporteEditar, setComentarioReporteEditar] = useState("");
     const [comunidadReporteEditar, setComunidadReporteEditar] = useState("");
 
     useEffect(() => { 
@@ -25,7 +24,6 @@ function RepModal({ abrirModal, cerrarModal, reportes }) {
         setDescripcionReporteEditar(reportes.descripcion_Votacion);
         setDireccionReporteEditar(reportes.direccion_campana);
         setImagenReporteEditar(reportes.imagen_Votacion);
-        setComentarioReporteEditar(reportes.comentario_Votacion);
       } 
 
       async function fetchCampaigns() {
@@ -47,7 +45,6 @@ function RepModal({ abrirModal, cerrarModal, reportes }) {
         "descripcion_reporte": descripcionReporteEditar,
         "direccion_reporte": direccionReporteEditar,
         "imagen_reporte": imagenReporteEditar, 
-        "comentario_reporte": comentarioReporteEditar
       };
       await updateData(editInfo,"intReportes/reportes_rud", id);
     }
@@ -104,16 +101,6 @@ function RepModal({ abrirModal, cerrarModal, reportes }) {
                   autoFocus
                   value={imagenReporteEditar || ""}
                   onChange={(e) => setImagenReporteEditar(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label>Comentario</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Comentario"
-                  autoFocus
-                  value={comentarioReporteEditar || ""}
-                  onChange={(e) => setComentarioReporteEditar(e.target.value)}
                 />
               </Form.Group>
             </Form>

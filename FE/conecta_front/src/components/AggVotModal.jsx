@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { getData, postData } from '../services/fetch';
 
-function AggPetModal({ abrirModal, cerrarModal }) {
+function AggVotModal({ abrirModal, cerrarModal }) {
   const [comunidades, setComunidades] = useState([]);
   const [comunidad, setComunidad] = useState('');
   const [nombre, setNombre] = useState('');
@@ -19,16 +19,16 @@ function AggPetModal({ abrirModal, cerrarModal }) {
     cargarComunidades();
   }, []);
   
-  const enviarPeticion = async () => {
-    const nuevaPeticion = {
+  const enviarVotacion = async () => {
+    const nuevaVotacion = {
       comunidad,
-      nombre_peticion: nombre,
-      descripcion_peticion: descripcion,
-      fecha_peticion: fecha,
-      imagen_peticion: 'abc',
+      nombre_votacion: nombre,
+      descripcion_votacion: descripcion,
+      fecha_votacion: fecha,
+      imagen_votacion: 'abc',
       usuario: 1,
     };
-    await postData('intPeticiones/peticiones_create/', nuevaPeticion);
+    await postData('intVotaciones/votaciones/', nuevaVotacion);
   };
 
   return (
@@ -53,10 +53,10 @@ function AggPetModal({ abrirModal, cerrarModal }) {
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="nombreInput">
-            <Form.Label>Nombre de Campaña</Form.Label>
+            <Form.Label>Nombre de Votacion</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Nombre de la Peticion"
+              placeholder="Nombre de la Votación"
               value={nombre}
               onChange={e => setNombre(e.target.value)}
             />
@@ -87,7 +87,7 @@ function AggPetModal({ abrirModal, cerrarModal }) {
         <Button
           variant="primary"
           onClick={async () => {
-            await enviarPeticion();
+            await enviarVotacion();
             if (cerrarModal) cerrarModal();
           }}
         >
@@ -98,4 +98,4 @@ function AggPetModal({ abrirModal, cerrarModal }) {
   );
 }
 
-export default AggPetModal;
+export default AggVotModal;

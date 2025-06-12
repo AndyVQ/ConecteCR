@@ -24,8 +24,7 @@ function VotAdmin() {
   String(vote.usuario || "").toLowerCase().includes(search.toLowerCase()) ||
   String(vote.comunidad || "").toLowerCase().includes(search.toLowerCase()) ||
   String(vote.descripcion_votacion || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(vote.fecha_votacion || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(vote.comentario_votacion || "").toLowerCase().includes(search.toLowerCase())
+  String(vote.fecha_votacion || "").toLowerCase().includes(search.toLowerCase())
 );
 
 function abrirModalVotacion(votacion) {
@@ -46,8 +45,8 @@ async function deleteProd(id) {
   return (
      <div className="dashboard-container">
       <div className="main-content">
-        <h2>Campañas</h2>
-        <input type="text" placeholder="Buscar Peticiones" className="admin-search-1"
+        <h2>Votaciones</h2>
+        <input type="text" placeholder="Buscar Votaciones" className="admin-search-1"
         value={search}
         onChange={e => setSearch(e.target.value)}/>
         <table>
@@ -59,7 +58,6 @@ async function deleteProd(id) {
               <th>Descripción</th>
               <th>Fecha de creación</th>
               <th>Imagen</th>
-              <th>Comentario</th>
               <th>Editar</th>
             </tr>
           </thead>
@@ -72,7 +70,6 @@ async function deleteProd(id) {
                 <td>{votacion.descripcion_votacion}</td>
                 <td>{votacion.fecha_votacion}</td>
                 <td>{votacion.imagen_votacion}</td>
-                <td>{votacion.comentario_votacion}</td>
                 <td>
                   <button>👁️</button>
                   <button onClick={() => abrirModalVotacion(votacion)}>✏️</button>

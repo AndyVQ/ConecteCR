@@ -8,4 +8,3 @@ class Votaciones(models.Model):
     descripcion_votacion = models.CharField(max_length=100,null=False,blank=False)
     fecha_votacion = models.DateField(null=False,blank=False)
     imagen_votacion = models.TextField()
-    comentario_votacion = models.CharField(max_length=100)

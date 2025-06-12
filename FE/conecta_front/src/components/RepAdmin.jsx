@@ -24,8 +24,7 @@ function RepAdmin() {
   String(reports.usuario || "").toLowerCase().includes(search.toLowerCase()) ||
   String(reports.comunidad || "").toLowerCase().includes(search.toLowerCase()) ||
   String(reports.descripcion_reporte || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(reports.fecha_reporte || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(reports.comentario_reporte || "").toLowerCase().includes(search.toLowerCase())
+  String(reports.fecha_reporte || "").toLowerCase().includes(search.toLowerCase())
 );
 
 function abrirModalReporte(reporte) {
@@ -60,7 +59,6 @@ async function deleteProd(id) {
               <th>Fecha de creación</th>
               <th>Imagen</th>
               <th>Gravedad</th>
-              <th>Comentario</th>
               <th>Editar</th>
             </tr>
           </thead>
@@ -74,7 +72,6 @@ async function deleteProd(id) {
                 <td>{reporte.fecha_reporte}</td>
                 <td>{reporte.imagen_reporte}</td>
                 <td>{reporte.gravedad_reporte}</td>
-                <td>{reporte.comentario_reporte}</td>
                 <td>
                   <button>👁️</button>
                   <button onClick={() => abrirModalReporte(reporte)}>✏️</button>

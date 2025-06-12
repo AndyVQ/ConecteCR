@@ -15,5 +15,4 @@ class Reportes(models.Model):
     direccion_reportes = models.CharField(max_length=100,null=False,blank=False)
     imagen_reporte = models.TextField()
     gravedad_reporte = models.CharField(choices=GRAVEDAD,null=False,blank=False,max_length=40)
-    comentario_reporte = models.CharField(max_length=100)
 
