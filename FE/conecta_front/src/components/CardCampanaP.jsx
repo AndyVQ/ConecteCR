@@ -1,3 +1,5 @@
+import "../styles/CardCampanaP.css";
+
 const CardCampanaP = ({ titulo, descripcion, comunidad, fecha, direccion }) => {
   return (
     <div className="card-campana">

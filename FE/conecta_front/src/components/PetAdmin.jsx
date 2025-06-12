@@ -17,7 +17,7 @@ function PetAdmin() {
         setPetitions(petitionsGet);
       }
       fetchPetitions();
-    }, []);
+    }, [petitions]);
 
   const filtarPeticion = petitions.filter(petition =>
   String(petition.nombre_peticion || "").toLowerCase().includes(search.toLowerCase()) ||
@@ -71,7 +71,6 @@ async function deleteProd(id) {
                 <td>{peticion.fecha_peticion}</td>
                 <td>{peticion.estado_peticion}</td>
                 <td>
-                  <button>👁️</button>
                   <button onClick={() => abrirModalPeticion(peticion)}>✏️</button>
                   <button onClick={() => deleteProd(peticion.id)}>🗑️</button>
                 </td>
