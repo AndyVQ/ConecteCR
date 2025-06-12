@@ -13,7 +13,6 @@ function CampModal({ abrirModal, cerrarModal, campanas }) {
     const [descripcionCampanaEditar, setDescripcionCampanaEditar] = useState("");
     const [direccionCampanaEditar, setDireccionCampanaEditar] = useState("");
     const [imagenCampanaEditar, setImagenCampanaEditar] = useState("");
-    const [comentarioCampanaEditar, setComentarioCampanaEditar] = useState("");
     const [comunidadCampanaEditar, setComunidadCampanaEditar] = useState("");
 
     useEffect(() => { 
@@ -25,7 +24,6 @@ function CampModal({ abrirModal, cerrarModal, campanas }) {
         setDescripcionCampanaEditar(campanas.descripcion_campana);
         setDireccionCampanaEditar(campanas.direccion_campana);
         setImagenCampanaEditar(campanas.imagen_campana);
-        setComentarioCampanaEditar(campanas.comentario_campana);
       } 
 
       async function fetchCampaigns() {
@@ -46,8 +44,7 @@ function CampModal({ abrirModal, cerrarModal, campanas }) {
         "nombre_campana": nombreCampanaEditar,
         "descripcion_campana": descripcionCampanaEditar,
         "direccion_campana": direccionCampanaEditar,
-        "imagen_campana": imagenCampanaEditar, 
-        "comentario_campana": comentarioCampanaEditar
+        "imagen_campana": imagenCampanaEditar,
       };
       await updateData(editInfo,"intCampanas/campanas_rud", id);
     }
@@ -114,16 +111,6 @@ function CampModal({ abrirModal, cerrarModal, campanas }) {
                   autoFocus
                   value={imagenCampanaEditar}
                   onChange={(e) => setImagenCampanaEditar(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label>Comentario</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Comentario"
-                  autoFocus
-                  value={comentarioCampanaEditar}
-                  onChange={(e) => setComentarioCampanaEditar(e.target.value)}
                 />
               </Form.Group>
             </Form>

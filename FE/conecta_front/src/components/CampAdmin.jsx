@@ -26,8 +26,7 @@ const filtarCampana = campaigns.filter(campaign =>
   String(campaign.comunidad || "").toLowerCase().includes(search.toLowerCase()) ||
   String(campaign.descripcion_campana || "").toLowerCase().includes(search.toLowerCase()) ||
   String(campaign.fecha_campana || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(campaign.direccion_campana || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(campaign.comentario_campana || "").toLowerCase().includes(search.toLowerCase())
+  String(campaign.direccion_campana || "").toLowerCase().includes(search.toLowerCase())
 );
 
 function abrirModalCampana(campana) {
@@ -64,7 +63,6 @@ async function deleteProd(id) {
               <th>Fecha de creación</th>
               <th>Dirección</th>
               <th>Imagen</th>
-              <th>Comentario</th>
               <th>Editar</th>
             </tr>
           </thead>
@@ -78,8 +76,6 @@ async function deleteProd(id) {
                 <td>{campaign.fecha_campana}</td>
                 <td>{campaign.direccion_campana}</td>
                 <td>{campaign.imagen_campana}</td>
-                <td>{campaign.comentario_campana}</td>
-              
                 <td>
                   <button>👁️</button>
                   <button onClick={() => abrirModalCampana(campaign)}>✏️</button>
