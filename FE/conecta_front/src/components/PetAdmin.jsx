@@ -24,8 +24,7 @@ function PetAdmin() {
   String(petition.usuario || "").toLowerCase().includes(search.toLowerCase()) ||
   String(petition.comunidad || "").toLowerCase().includes(search.toLowerCase()) ||
   String(petition.descripcion_peticion || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(petition.fecha_peticion || "").toLowerCase().includes(search.toLowerCase()) ||
-  String(petition.comentario_peticion || "").toLowerCase().includes(search.toLowerCase())
+  String(petition.fecha_peticion || "").toLowerCase().includes(search.toLowerCase()) 
 );
 
 function abrirModalPeticion(peticion) {
@@ -58,8 +57,6 @@ async function deleteProd(id) {
               <th>Peticion</th>
               <th>Descripción</th>
               <th>Fecha de creación</th>
-              <th>Imagen</th>
-              <th>Comentario</th>
               <th>Editar</th>
             </tr>
           </thead>
@@ -71,8 +68,6 @@ async function deleteProd(id) {
                 <td>{peticion.nombre_peticion}</td>
                 <td>{peticion.descripcion_peticion}</td>
                 <td>{peticion.fecha_peticion}</td>
-                <td>{peticion.imagen_peticion}</td>
-                <td>{peticion.comentario_peticion}</td>
                 <td>
                   <button>👁️</button>
                   <button onClick={() => abrirModalPeticion(peticion)}>✏️</button>
