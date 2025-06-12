@@ -6,7 +6,7 @@ const AdminNavBar = () => {
     <>
       <nav className="navbar">
         <section>
-          <img src="\src\img\logo.png" alt="Logo ConecteCR" className="logotipo"/> 
+        <h5 className="h3-admin"><CgProfile /> Admin</h5>
         </section>
         <ul className="nav-links">
           <li>
@@ -27,10 +27,6 @@ const AdminNavBar = () => {
           <li>
             <a href="/NotAdmin">Noticias</a>
           </li>
-          <li>
-            <a><CgProfile /> Admin</a>
-          </li>
-
         </ul>
       </nav>
     </>
