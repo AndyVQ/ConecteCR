@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useEffect } from "react";
 import { getData, updateData } from "../services/fetch";
 
-function RepModal({ abrirModal, cerrarModal, noticias }) {   
+function NotModal({ abrirModal, cerrarModal, noticias }) {   
 
     const [news, setNews] = useState([]);
     const [descripcionNoticiaEditar, setDescripcionNoticiaEditar] = useState("");
@@ -31,7 +31,7 @@ function RepModal({ abrirModal, cerrarModal, noticias }) {
         "imagen_noticia": imagenNoticiaEditar,
         "titular_notica": titularNoticiaEditar,
       };
-      await updateData(editInfo,"intNoticias/noticias_rud", id);
+      await updateData(editInfo,"intNoticias/noticia_rud", id);
     }
 
     return (
@@ -41,31 +41,15 @@ function RepModal({ abrirModal, cerrarModal, noticias }) {
             <Modal.Title>Editar</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>    
-              <Form.Group className="mb-3" controlId="comunidadSelect">
-                <Form.Label>Comunidad</Form.Label>
-                <select
-                  name="Comunidad"
-                  className="form-control"
-                  value={comunidadReporteEditar || ""}
-                  onChange={e => setComunidadReporteEditar(Number(e.target.value))}
-                >
-                  <option value="" disabled>Seleccione una comunidad</option>
-                  {comunidades.map((comunidad, index) => (
-                    <option key={index} value={comunidad.id}>
-                      {comunidad.nombre_comunidad}
-                    </option>
-                  ))}
-                </select>
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="reporteInput">
-                <Form.Label>Reporte</Form.Label>
+            <Form>   
+              <Form.Group className="mb-3" controlId="noticiaInput">
+                <Form.Label>Noticia</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Nombre del Reporte"
-                  onChange={(e) => setNombreReporteEditar(e.target.value)}
+                  placeholder="Titulo de la noticia"
+                  onChange={(e) => setTitularNoticiaEditar(e.target.value)}
                   autoFocus
-                  value={nombreReporteEditar || ""}
+                  value={titularNoticiaEditar || ""}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="descripcionInput">
@@ -74,8 +58,8 @@ function RepModal({ abrirModal, cerrarModal, noticias }) {
                   type="text"
                   placeholder="Descripción"
                   autoFocus
-                  value={descripcionReporteEditar || ""}
-                  onChange={(e) => setDescripcionReporteEditar(e.target.value)}
+                  value={descripcionNoticiaEditar || ""}
+                  onChange={(e) => setDescripcionNoticiaEditar(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="imagenInput">
@@ -84,18 +68,8 @@ function RepModal({ abrirModal, cerrarModal, noticias }) {
                   type="text"
                   placeholder="Imagen"
                   autoFocus
-                  value={imagenReporteEditar || ""}
-                  onChange={(e) => setImagenReporteEditar(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label>Comentario</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Comentario"
-                  autoFocus
-                  value={comentarioReporteEditar || ""}
-                  onChange={(e) => setComentarioReporteEditar(e.target.value)}
+                  value={imagenNoticiaEditar || ""}
+                  onChange={(e) => setImagenNoticiaEditar(e.target.value)}
                 />
               </Form.Group>
             </Form>
@@ -106,7 +80,7 @@ function RepModal({ abrirModal, cerrarModal, noticias }) {
             </Button>
             <Button variant="primary" 
               onClick={async () => {
-                await editProd(reportes.id);
+                await editProd(noticias.id);
                 cerrarModal();
               }}>
               Save Changes
@@ -117,5 +91,5 @@ function RepModal({ abrirModal, cerrarModal, noticias }) {
     );
 }
 
-export default RepModal;
+export default NotModal;
 

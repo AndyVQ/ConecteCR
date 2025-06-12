@@ -14,7 +14,7 @@ function AggNotModal({ abrirModal, cerrarModal }) {
       descripcion_noticia: descripcion,
       fecha_noticia: fecha,
       imagen_noticia: 'abc',
-      titular_noticia: nombre,
+      titular_notica: nombre,
       usuario: 1,
     };
     await postData('intNoticias/noticia_create/', nuevaNoticia);
@@ -23,7 +23,7 @@ function AggNotModal({ abrirModal, cerrarModal }) {
   return (
     <Modal show={abrirModal} onHide={cerrarModal}>
       <Modal.Header closeButton>
-        <Modal.Title>Agregar campaña</Modal.Title>
+        <Modal.Title>Agregar Noticia</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>

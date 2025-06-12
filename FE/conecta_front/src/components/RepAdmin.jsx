@@ -45,7 +45,7 @@ async function deleteProd(id) {
   return (
      <div className="dashboard-container">
       <div className="main-content">
-        <h2>Campañas</h2>
+        <h2>Reportes</h2>
         <input type="text" placeholder="Buscar Reportes" className="admin-search-1"
         value={search}
         onChange={e => setSearch(e.target.value)}/>

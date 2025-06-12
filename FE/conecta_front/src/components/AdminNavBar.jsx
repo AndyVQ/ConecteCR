@@ -6,7 +6,7 @@ const AdminNavBar = () => {
     <>
       <nav className="navbar">
         <section>
-          <img src="\src\img\logo.png" alt="Logo ConecteCR" className="logotipo"/>
+          <img src="\src\img\logo.png" alt="Logo ConecteCR" className="logotipo"/> 
         </section>
         <ul className="nav-links">
           <li>
