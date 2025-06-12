@@ -15,7 +15,6 @@ class PeticionesCreateView(ListCreateAPIView):
 class PeticionesRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Peticiones.objects.all()
     serializer_class = PeticionesSerializer
-    
     lookup_field = 'id'
     
 class PeticionesListApiView(ListAPIView):

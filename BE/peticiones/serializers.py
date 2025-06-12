@@ -8,4 +8,4 @@ class PeticionesSerializer(ModelSerializer):
     nombre_usuario = serializers.CharField(source="usuario.usuario.username", read_only=True)
     class Meta:
         model = Peticiones
-        fields = ["id", "nombre_usuario", "usuario", "comunidad", "nombre_peticion", "descripcion_peticion", "fecha_peticion", "imagen_peticion", "comentario_peticion", "nombre_comunidad"]
+        fields = ["id", "nombre_usuario", "usuario", "comunidad", "nombre_peticion", "descripcion_peticion", "fecha_peticion", "nombre_comunidad","estado_peticion"]
