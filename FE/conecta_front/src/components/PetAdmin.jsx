@@ -45,7 +45,7 @@ async function deleteProd(id) {
   return (
      <div className="dashboard-container">
       <div className="main-content">
-        <h2>Campañas</h2>
+        <h2>Peticiones</h2>
         <input type="text" placeholder="Buscar Peticiones" className="admin-search-1"
         value={search}
         onChange={e => setSearch(e.target.value)}/>
@@ -57,6 +57,7 @@ async function deleteProd(id) {
               <th>Peticion</th>
               <th>Descripción</th>
               <th>Fecha de creación</th>
+              <th>Estado</th>
               <th>Editar</th>
             </tr>
           </thead>
@@ -68,6 +69,7 @@ async function deleteProd(id) {
                 <td>{peticion.nombre_peticion}</td>
                 <td>{peticion.descripcion_peticion}</td>
                 <td>{peticion.fecha_peticion}</td>
+                <td>{peticion.estado_peticion}</td>
                 <td>
                   <button>👁️</button>
                   <button onClick={() => abrirModalPeticion(peticion)}>✏️</button>
