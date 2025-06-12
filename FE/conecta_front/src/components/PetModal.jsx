@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { getData, updateData } from "../services/fetch";
 
 function PetModal({ abrirModal, cerrarModal, peticiones }) {
-  const [peticiones, setPeticiones] = useState([]);
+  const [peticioness, setPetitions] = useState([]);
   const [comunidades, setComunidades] = useState([]);
   const [nombrePeticionEditar, setNombrePeticionEditar] = useState("");
   const [descripcionPeticionEditar, setDescripcionPeticionEditar] = useState("");
@@ -24,9 +24,9 @@ function PetModal({ abrirModal, cerrarModal, peticiones }) {
     }
 
     async function fetchCampaigns() {
-      const peticionesGet =
+      const peticionessGet =
         (await getData("intPeticiones/peticiones_get/")) || [];
-      setPeticiones(peticionesGet);
+      setPetitions(peticionessGet);
     }
     fetchCampaigns();
     async function fetchComunidades() {
