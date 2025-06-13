@@ -4,6 +4,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from .serializers import ComunidadesSerializer
 from .models import Comunidades
 
+
 class ComunidadesCreateView(ListCreateAPIView):
     queryset = Comunidades.objects.all()
     serializer_class = ComunidadesSerializer
