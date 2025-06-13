@@ -1,41 +1,63 @@
 /* src/styles/CardCampanaP.css */
 
 .card-campana {
-  background: #4ace5c;                        
-  border-radius: 12px;
-  padding: 1.5rem 1.75rem;
-  max-width: 380px;
-  margin: 1.5rem auto;
-  color: #ffffff;                             
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background: #4ace5c;                         /* Color verde principal */
+  border-radius: 16px;                         /* Bordes más redondeados */
+  padding: 1rem 1.25rem;                       /* Espaciado ajustado */
+  max-width: 320px;                            /* Cards más pequeños */
+  margin: 1.2rem auto;                         /* Espaciado entre cards */
+  color: #ffffff;                              /* Texto en blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    /* Sombra más sutil */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.95;                               /* Opacidad para dar un toque moderno */
 }
 
 .card-campana:hover {
-  background: #b1efb6;                        
-  transform: translateY(-8px);                
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
+  background: #35d943ca;                         /* Cambio de color al pasar el ratón */
+  transform: scale(1.05) rotate(2deg);          /* Animación de escala y rotación */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);   /* Sombra más pronunciada */
+  opacity: 1;                                  /* Totalmente visible al hacer hover */
 }
 
 .titulo-campana {
-  font-size: 1.5rem;
+  font-size: 1.4rem;                           /* Fuente más pequeña para un look compacto */
   font-weight: bold;
-  color: #ffffff;                             
+  color: #ffffff;                              /* Título en blanco */
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;                       /* Menos margen entre el título y el contenido */
+  text-transform: uppercase;                   /* Título en mayúsculas para hacerlo más llamativo */
+  letter-spacing: 1px;                          /* Espaciado entre letras */
 }
 
 .descripcion-campana,
 .direccion-campana,
 .fecha-campana,
 .comunidad-campana {
-  margin-bottom: 0.4rem;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  color: #e0f2f1;                           
+  margin-bottom: 0.5rem;                       /* Espaciado consistente */
+  font-size: 1rem;                             /* Tamaño de fuente moderado */
+  line-height: 1.3;
+  color: #ffffff;                              /* Texto en blanco */
+  text-align: center;                          /* Centrado del texto */
 }
 
 .fecha-campana {
-  font-weight: 700;                           
+  font-weight: 700;                            /* Texto más grueso para la fecha */
+  font-size: 1.2rem;                           /* Un poco más grande para la fecha */
+  color: #e0f2f1;                              /* Color suave para la fecha */
+}
 
+/* Animaciones adicionales */
+@keyframes hover-animation {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1.05) rotate(2deg);
+    opacity: 1;
+  }
+}
+
+.card-campana:hover {
+  animation: hover-animation 0.3s ease-in-out forwards; /* Animación personalizada */
 }

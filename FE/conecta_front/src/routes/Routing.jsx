@@ -13,7 +13,7 @@ import PagCampModal from "../pages/PagCampModal";
 import PagPetModal from "../pages/PagPetModal";
 import PagVotModal from "../pages/PagVotModal";
 import PagRepModal from "../pages/PagRepModal";
-
+import PagPeticiones from "../pages/PagPeticiones";
 function Routing() {
   return (
     <div>
@@ -33,6 +33,7 @@ function Routing() {
           <Route path="/PetModal" element={<PagPetModal/>} />
           <Route path="/VotModal" element={<PagVotModal />} />
           <Route path="/RepModal" element={<PagRepModal />} />
+          <Route path="/PagPeti" element={<PagPeticiones />} />
 
         </Routes>
       </Router>
