@@ -7,10 +7,10 @@ import { getData, postData } from '../services/fetch';
 
 function AggPetModal({ abrirModal, cerrarModal }) {
   const [comunidades, setComunidades] = useState([]);
-  const [comunidad, setComunidad] = useState('');
-  const [nombre, setNombre] = useState('');
-  const [descripcion, setDescripcion] = useState('');
-  const [fecha, setFecha] = useState('');
+  const [comunidad, setComunidad] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [fecha, setFecha] = useState("");
 
   useEffect(() => {
     async function cargarComunidades() {

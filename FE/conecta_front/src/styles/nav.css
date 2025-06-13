@@ -35,7 +35,7 @@
 }
 
 .logotipo {
-  width: 50px;
+  width: 120px;
   margin-left: 20px;
   transition: transform 0.3s ease, filter 0.4s ease;
 }
@@ -52,7 +52,7 @@
 }
 .nav-links li a {
   font-family: "Segoe UI", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #2c3e50;
   text-decoration: none;
   padding: 0.4rem 0.4rem;

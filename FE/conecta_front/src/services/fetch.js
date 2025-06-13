@@ -37,7 +37,7 @@ async function getData(endpoint,id="") {
     }
 }
 
-//////////////LLAMADO UPDATE/////////////
+
 
 
 async function updateData(data, endpoint,id) 
@@ -58,7 +58,7 @@ async function updateData(data, endpoint,id)
     }
 }
 
-//////////////LLAMADO DELETE/////////////
+
 
 
 async function deleteData(endpoint, id) {

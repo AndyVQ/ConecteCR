@@ -73,7 +73,6 @@ async function deleteProd(id) {
                 <td>{reporte.imagen_reporte}</td>
                 <td>{reporte.gravedad_reporte}</td>
                 <td>
-                  <button>👁️</button>
                   <button onClick={() => abrirModalReporte(reporte)}>✏️</button>
                   <button onClick={() => deleteProd(reporte.id)}>🗑️</button>
                 </td>

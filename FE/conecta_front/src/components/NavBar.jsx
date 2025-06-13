@@ -1,29 +1,32 @@
+import { Link } from "react-router-dom";
 import "../styles/nav.css";
+import logo from "../img/logo.png"; 
 
 const Navbar = () => {
   return (
-    <>
-      <nav className="navbar">
-        <section>
-          <img src="\src\img\logo.png" alt="Logo ConecteCR" className="logotipo"/>
-        </section>
-        <ul className="nav-links">
-          <li>
-            <a href="/Campañas">Campañas</a>
-
+    <nav className="navbar">
+      <section>
+       
+        <Link to="/home">
+          <img src={logo} alt="Logo ConecteCR" className="logotipo" />
+        </Link>
+        
+      </section>
+      <ul className="nav-links">
+        <li>
+          <Link to="/Campañas">Campañas</Link>
           </li>
-          <li>
-            <a href="/PagPeti">Peticiones</a>
+        <li>
+          <Link to="/PagPeti">Peticiones</Link>
           </li>
-          <li>
-            <a href="/PagVota">Votaciones</a>
+        <li>
+          <Link to="/PagVota">Votaciones</Link>
           </li>
-          <li>
-            <a href="/PagReport">Reportes</a>
+        <li>
+          <Link to="/PagReport">Reportes</Link>
           </li>
-        </ul>
-      </nav>
-    </>
+      </ul>
+    </nav>
   );
 };
 
