@@ -9,5 +9,5 @@ class ReportesSerializer(ModelSerializer):
     nombre_usuario = serializers.CharField(source="usuario.usuario.username", read_only=True)
     class Meta:
         model = Reportes
-        fields = ["id","nombre_usuario","usuario","comunidad","nombre_reporte","descripcion_reporte","fecha_reporte","direccion_reportes","imagen_reporte","gravedad_reporte","nombre_comunidad"]
+        fields = ["id","nombre_usuario","usuario","comunidad","nombre_reporte","descripcion_reporte","fecha_reporte","direccion_reportes","imagen_reporte","gravedad_reporte","nombre_comunidad","estado_reporte"]
         
