@@ -13,6 +13,11 @@ class PermisosPersonalizados(BasePermission):
         grupos_usuario = usuario.groups.values_list("name", flat=True)  
         metodo_peticion = request.method
         
+        if "usuario" in grupos_usuario:
+            if metodo_peticion in SAFE_METHODS:
+                return True
+            return False
+        
         if "moderador" in grupos_usuario:
             if metodo_peticion in ["POST", "PATCH", "DELETE"]:
                 return True
