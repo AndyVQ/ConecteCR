@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { postData } from "../services/fetch";
+import { postData, postUser } from "../services/fetch";
 import "../styles/Login.css";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
@@ -16,7 +16,7 @@ const Login = () => {
       password: clave,
     };
 
-    const respuesta = await postData("usuarios/login/", usuarioObj);
+    const respuesta = await postUser("usuarios/login/", usuarioObj);
 
     if (respuesta.exito) {
       Swal.fire({

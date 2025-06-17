@@ -1,4 +1,4 @@
-import CardCampanaP from "./CardCampanaP";
+  import CardCampanaP from "./CardCampanaP";
 import { getData } from "../services/fetch";
 import { useState, useEffect } from "react";
 

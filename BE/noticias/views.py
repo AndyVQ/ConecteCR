@@ -18,12 +18,12 @@ class PermisosPersonalizados(BasePermission):
         metodo_peticion = request.method
         
         if "moderador" in grupos_usuario:
-            if metodo_peticion in ["POST", "PATCH", "DELETE"]:
+            if metodo_peticion in ["GET", "POST", "PATCH", "DELETE"]:
                 return True
             return False
         
         if "administrador" in grupos_usuario:
-            if metodo_peticion in ["POST", "PUT", "PATCH", "DELETE"]:
+            if metodo_peticion in ["GET", "POST", "PUT", "PATCH", "DELETE"]:
                 return True
             if metodo_peticion in SAFE_METHODS:
                 return True

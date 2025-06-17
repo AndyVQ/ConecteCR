@@ -1,8 +1,8 @@
-import { postData } from "../services/fetch";
+import { postData, postUser } from "../services/fetch";
 import "../styles/register.css";
 import { useState } from "react";
-import { Link } from "react-router-dom"
-import Swal from 'sweetalert2'
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const FormularioRegister = () => {
   const [userName, SetUserName] = useState("");
@@ -24,20 +24,20 @@ const FormularioRegister = () => {
       !userCedula ||
       !userTel
     ) {
-        Swal.fire({
+      Swal.fire({
         title: "Por favor rellena todos los campos!",
         text: "Intentalo de nuevo!",
         icon: "error",
-    });
+      });
       return;
     }
 
     if (userPass.length < 8) {
-        Swal.fire({
-        title: "La contraseña debe tener mas de 8 caracteres!", 
+      Swal.fire({
+        title: "La contraseña debe tener mas de 8 caracteres!",
         text: "Intentalo de nuevo!",
         icon: "error",
-    });
+      });
       return;
     }
 
@@ -50,8 +50,8 @@ const FormularioRegister = () => {
       cedula: userCedula,
       telefono: userTel,
     };
-    await postData("usuarios/register/", users);
-    
+    await postUser("usuarios/register/", users);
+
     Swal.fire({
       title: "Cuenta creada!",
       text: "Bienvenido a ConecteCR!",
@@ -65,10 +65,14 @@ const FormularioRegister = () => {
       <div>
         <div className="register-Info">
           <section className="cont-image">
-            <img src="\src\img\logo.png" alt="Logo ConecteCR" className="logo" />
+            <img
+              src="\src\img\logo.png"
+              alt="Logo ConecteCR"
+              className="logo"
+            />
           </section>
           <div className="register-inputs">
-                <h2 className="h2">Registrate aquí</h2>
+            <h2 className="h2">Registrate aquí</h2>
             <div className="input-columns">
               <div className="columna columna-1">
                 <input
@@ -95,7 +99,9 @@ const FormularioRegister = () => {
                   placeholder="Correo"
                   className="register-input"
                 />
-                <p className="h20"><Link to= "/">Ya tienes una cuenta? </Link></p>
+                <p className="h20">
+                  <Link to="/">Ya tienes una cuenta? </Link>
+                </p>
               </div>
               <div className="columna columna-2">
                 <input
