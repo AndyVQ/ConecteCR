@@ -21,7 +21,8 @@ class ValidarUsuarioView(APIView):
             refresh_token = str(refresh)
             return Response({
                 "exito": "Autenticación exitosa",
-                "token":access_token}, status=status.HTTP_200_OK)
+                "token":access_token,
+                "id":usuario.id}, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Credenciales incorrectas"}, status=status.HTTP_401_UNAUTHORIZED)
         

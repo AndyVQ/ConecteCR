@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-
 const Login = () => {
   const [usuario, setUsuario] = useState("");
   const [clave, setClave] = useState("");
@@ -26,6 +25,8 @@ const Login = () => {
         icon: "success",
         confirmButtonText: "Continuar",
       });
+      localStorage.setItem("token", respuesta.token);
+      localStorage.setItem("id_usuario", respuesta.id);
     } else {
       Swal.fire({
         title: "Error",
