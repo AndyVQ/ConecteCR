@@ -8,16 +8,14 @@ import { getData, updateData } from "../services/fetch";
 function PetModal({ abrirModal, cerrarModal, peticiones }) {
   const [comunidades, setComunidades] = useState([]);
   const [nombrePeticionEditar, setNombrePeticionEditar] = useState("");
-  const [descripcionPeticionEditar, setDescripcionPeticionEditar] =
-    useState("");
+  const [descripcionPeticionEditar, setDescripcionPeticionEditar] = useState("");
   const [comunidadPeticionEditar, setComunidadPeticionEditar] = useState("");
   const [estadoPeticionEditar, setEstadoPeticionEditar] = useState("pendiente");
 
   useEffect(() => {
     if (peticiones) {
       setComunidadPeticionEditar(
-        peticiones.comunidad ? Number(peticiones.comunidad) : ""
-      );
+        peticiones.comunidad ? Number(peticiones.comunidad) :"");
       setNombrePeticionEditar(peticiones.nombre_peticion);
       setDescripcionPeticionEditar(peticiones.descripcion_peticion);
       setEstadoPeticionEditar(peticiones.estado_peticion || "pendiente");
