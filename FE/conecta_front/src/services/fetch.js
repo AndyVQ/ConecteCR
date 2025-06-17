@@ -59,6 +59,7 @@ async function updateData(data, endpoint, id) {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
+         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify(data),
     });
@@ -75,6 +76,7 @@ async function deleteData(endpoint, id) {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
 
