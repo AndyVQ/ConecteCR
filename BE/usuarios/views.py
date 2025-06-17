@@ -19,10 +19,15 @@ class ValidarUsuarioView(APIView):
             refresh = RefreshToken.for_user(usuario)
             access_token = str(refresh.access_token)
             refresh_token = str(refresh)
+            grupo_usuario = usuario.groups.first().name if usuario.groups.exists() else None
             return Response({
                 "exito": "Autenticación exitosa",
                 "token":access_token,
-                "id":usuario.id}, status=status.HTTP_200_OK)
+                "id":usuario.id,
+                "grupo": grupo_usuario,
+                "refresh": refresh_token
+                }, status=status.HTTP_200_OK)
+
         else:
             return Response({"error": "Credenciales incorrectas"}, status=status.HTTP_401_UNAUTHORIZED)
         
@@ -42,6 +47,7 @@ class CreateUserView(APIView):
         elif User.objects.filter(email=email_usuario).exists():
             return Response({'error': 'Email ya registrado'}, status=400)
         
+        
         usuario = User.objects.create_user(
             username = nombre_usuario,
             first_name = primer_usuario,
@@ -49,7 +55,10 @@ class CreateUserView(APIView):
             email = email_usuario,
             password = clave_usuario 
             
+            
         )
+        usuario.groups.add(2)
+
         Perfil.objects.create(
             usuario=usuario, 
             cedula_usuario=cedula_usuario, 
@@ -57,3 +66,5 @@ class CreateUserView(APIView):
             image_usuario=image_usuario 
         )
         return Response({"mensaje": "Usuario creado exitosamente"}, status=status.HTTP_201_CREATED)
+    
+    
