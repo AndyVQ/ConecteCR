@@ -20,7 +20,7 @@ const ListaCardCampanaP = () => {
       const datos =
         (await getData("intCampanas/apoyos_campana/", id + "/")) || [];
       const filtradoApoyos = datos.filter(
-        (campana_apoyo) => campana_apoyo.id === id
+        (campana_apoyo) => campana_apoyo.campana === id
       );
       console.log(filtradoApoyos);
       setApoyos((prev) => ({
