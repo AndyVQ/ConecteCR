@@ -15,3 +15,4 @@ const CardCampanaP = ({ titulo, descripcion, comunidad, fecha, direccion }) => {
 };
 
 export default CardCampanaP;
+

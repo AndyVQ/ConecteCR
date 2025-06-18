@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
-from .serializers import CampanaSerializer
-from .models import Campana
+from .serializers import CampanaSerializer, ApoyoSerializer
+from .models import Campana, Apoyo
 from rest_framework.permissions import IsAuthenticated, BasePermission, SAFE_METHODS
 
 class PermisosPersonalizados(BasePermission):  
@@ -48,4 +48,8 @@ class CampanaListApiView(ListAPIView):
     permission_classes = [PermisosPersonalizados]
     queryset = Campana.objects.all()
     serializer_class = CampanaSerializer
-    
+
+class ApoyoCreateView(ListCreateAPIView):
+    permission_classes = [PermisosPersonalizados]
+    queryset = Apoyo.objects.all()
+    serializer_class = ApoyoSerializer
