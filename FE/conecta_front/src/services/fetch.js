@@ -33,7 +33,7 @@ async function postUser(endpoint, data) {
 
 async function getData(endpoint, id = "") {
   try {
-    const response = await fetch(`http://127.0.0.1:8000/${endpoint}`, {
+    const response = await fetch(`http://127.0.0.1:8000/${endpoint}${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ async function updateData(data, endpoint, id) {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-         Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify(data),
     });
@@ -76,7 +76,7 @@ async function deleteData(endpoint, id) {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-         Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
 

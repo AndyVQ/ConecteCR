@@ -11,10 +11,12 @@ class Campana(models.Model):
     fecha_campana = models.DateField(null=False,blank=False)
     imagen_campana = models.TextField()
 
+    def __str__(self):
+        return self.nombre_campana
+
 class Apoyo(models.Model):
     usuario = models.ForeignKey("usuarios.Perfil",on_delete=models.CASCADE)
     campana = models.ForeignKey(Campana,on_delete=models.CASCADE)
-    comunidad = models.ForeignKey("comunidades.Comunidades",on_delete=models.CASCADE)
     cantidad_apoyo = models.IntegerField(null=False,blank=False)
    
     

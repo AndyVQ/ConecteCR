@@ -1,25 +1,16 @@
-import React from 'react'
-import { Navigate } from "react-router-dom";
+import React from "react";
+function RutaPrivada({ children, rol }) {
+  const isAuthenticated = localStorage.getItem("token");
+  const userGroup = localStorage.getItem("grupo");
 
-function RutaPrivada() {
-    
-    const isAuthenticated = localStorage.getItem("token") !== null;
-    const userGroup = localStorage.getItem("user_group");
-    
-    if (!isAuthenticated) {
-        return <Navigate to="/" replace />;
+  const usuarioValido = () => {
+    if (isAuthenticated && userGroup === rol) {
+      return true;
     }
-    if (userGroup === "usuario") {
-        return <Navigate to="/Home" replace />;
-    }
-    if (userGroup === "administrador") {
-        return <Navigate to="/Admin" replace />;
-    }
+    return false;
+  };
 
-    
-  return (
-    <div>RutaPrivada</div>
-  )
+  return <>{usuarioValido() ? children : <h1>INVALIDO</h1>}</>;
 }
 
-export default RutaPrivada
+export default RutaPrivada;
