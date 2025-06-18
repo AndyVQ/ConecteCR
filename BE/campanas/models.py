@@ -10,5 +10,5 @@ class Campana(models.Model):
     direccion_campana = models.CharField(max_length=100,null=False,blank=False)
     fecha_campana = models.DateField(null=False,blank=False)
     imagen_campana = models.TextField()
-
+    apoyos = models.IntegerField(default=0)
     

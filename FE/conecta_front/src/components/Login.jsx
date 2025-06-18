@@ -2,13 +2,14 @@ import { useState } from "react";
 import { postData, postUser } from "../services/fetch";
 import "../styles/Login.css";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [usuario, setUsuario] = useState("");
   const [clave, setClave] = useState("");
   const [verClave, setVerClave] = useState("password");
+  const navigate = useNavigate();
 
   async function validarUsuario() {
     const usuarioObj = {
@@ -16,7 +17,8 @@ const Login = () => {
       password: clave,
     };
 
-    const respuesta = await postUser("usuarios/login/", usuarioObj);
+    const respuesta = await postUser
+    ("usuarios/login/", usuarioObj);
 
     if (respuesta.exito) {
       Swal.fire({
@@ -27,7 +29,12 @@ const Login = () => {
       });
       localStorage.setItem("token", respuesta.token);
       localStorage.setItem("id_usuario", respuesta.id);
+<<<<<<< HEAD
+
+     navigate("/home"); 
+=======
       localStorage.setItem("user_group", respuesta.grupo);
+>>>>>>> 3fbda78a4d17f09c687bc6f3ef4bac4575fc4767
     } else {
       Swal.fire({
         title: "Error",
