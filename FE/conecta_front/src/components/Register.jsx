@@ -1,7 +1,7 @@
 import { postData, postUser } from "../services/fetch";
 import "../styles/register.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate} from "react-router-dom";
 import Swal from "sweetalert2";
 
 const FormularioRegister = () => {
@@ -56,6 +56,8 @@ const FormularioRegister = () => {
       title: "Cuenta creada!",
       text: "Bienvenido a ConecteCR!",
       icon: "success",
+      confirmButtonText: "Continuar",
+
     });
     setReload(!reload);
   }

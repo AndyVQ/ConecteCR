@@ -7,11 +7,6 @@ from .serializers import PeticionesSerializer
 from .models import Peticiones
 from rest_framework.permissions import IsAuthenticated,BasePermission,SAFE_METHODS
 
-"""
-administrador
-moderador
-usuario
-"""
 
 class PermisosPersonalizados(BasePermission):
     def has_permission(self, request, view):
@@ -35,7 +30,7 @@ class PermisosPersonalizados(BasePermission):
                 return True
             return False
         
-        if "admin" in grupos_usuario:
+        if "administrador" in grupos_usuario:
             if metodo_peticion in ["GET", "POST", "PUT", "PATCH", "DELETE"]:
                 return True
             if metodo_peticion in SAFE_METHODS:

@@ -15,6 +15,8 @@ import PagVotModal from "../pages/PagVotModal";
 import PagRepModal from "../pages/PagRepModal";
 import PagPeticiones from "../pages/PagPeticiones";
 import PagReportes from "../pages/PagReportes";
+import RutaPrivada from "./RutaPrivada"; 
+
 
 function Routing() {
   return (
@@ -24,7 +26,7 @@ function Routing() {
           <Route path="/" element={<PagLogin />} />
           <Route path="/Register" element={<PagRegister />} />
           <Route path="/Home" element={<PagHome />} />
-          <Route path="/Admin" element={<PagAdmin />} />
+          <Route path="/Admin" element={<RutaPrivada><PagAdmin /></RutaPrivada>}/>
           <Route path="/CampAdmin" element={<PagCampAdmin />} />
           <Route path="/PetAdmin" element={<PagPetAdmin />} />
           <Route path="/VotAdmin" element={<PagVotAdmin />} />

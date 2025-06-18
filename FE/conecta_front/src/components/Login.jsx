@@ -29,8 +29,12 @@ const Login = () => {
       });
       localStorage.setItem("token", respuesta.token);
       localStorage.setItem("id_usuario", respuesta.id);
+<<<<<<< HEAD
 
      navigate("/home"); 
+=======
+      localStorage.setItem("user_group", respuesta.grupo);
+>>>>>>> 3fbda78a4d17f09c687bc6f3ef4bac4575fc4767
     } else {
       Swal.fire({
         title: "Error",
@@ -41,7 +45,7 @@ const Login = () => {
     }
   }
 
-  return (
+  return ( 
     <main className="cont-todo">
       <div className="login-container">
         <section className="cont-img">
