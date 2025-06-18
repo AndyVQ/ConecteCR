@@ -58,7 +58,7 @@ const FormularioRegister = () => {
       icon: "success",
       confirmButtonText: "Continuar",
 
-    });
+    }); 
     setReload(!reload);
   }
 
