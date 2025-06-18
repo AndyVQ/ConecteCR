@@ -15,8 +15,7 @@ import PagVotModal from "../pages/PagVotModal";
 import PagRepModal from "../pages/PagRepModal";
 import PagPeticiones from "../pages/PagPeticiones";
 import PagReportes from "../pages/PagReportes";
-import RutaPrivada from "./RutaPrivada"; 
-
+import RutaPrivada from "./RutaPrivada";
 
 function Routing() {
   return (
@@ -26,7 +25,12 @@ function Routing() {
           <Route path="/" element={<PagLogin />} />
           <Route path="/Register" element={<PagRegister />} />
           <Route path="/Home" element={<PagHome />} />
-          <Route path="/Admin" element={<RutaPrivada><PagAdmin /></RutaPrivada>}/>
+          <Route
+            path="/Admin"
+            element={
+              <RutaPrivada children={<PagAdmin />} rol={"administrador"} />
+            }
+          />
           <Route path="/CampAdmin" element={<PagCampAdmin />} />
           <Route path="/PetAdmin" element={<PagPetAdmin />} />
           <Route path="/VotAdmin" element={<PagVotAdmin />} />
@@ -34,12 +38,11 @@ function Routing() {
           <Route path="/NotAdmin" element={<PagNotAdmin />} />
           <Route path="/Campañas" element={<PagCampa />} />
           <Route path="/CampModal" element={<PagCampModal />} />
-          <Route path="/PetModal" element={<PagPetModal/>} />
+          <Route path="/PetModal" element={<PagPetModal />} />
           <Route path="/VotModal" element={<PagVotModal />} />
           <Route path="/RepModal" element={<PagRepModal />} />
           <Route path="/PagPeti" element={<PagPeticiones />} />
-           <Route path="/PagReport" element={<PagReportes />} />
-
+          <Route path="/PagReport" element={<PagReportes />} />
         </Routes>
       </Router>
     </div>

@@ -17,8 +17,7 @@ const Login = () => {
       password: clave,
     };
 
-    const respuesta = await postUser
-    ("usuarios/login/", usuarioObj);
+    const respuesta = await postUser("usuarios/login/", usuarioObj);
 
     if (respuesta.exito) {
       Swal.fire({
@@ -29,8 +28,8 @@ const Login = () => {
       });
       localStorage.setItem("token", respuesta.token);
       localStorage.setItem("id_usuario", respuesta.id);
-
-     navigate("/home"); 
+      localStorage.setItem("grupo", respuesta.grupo);
+      navigate("/home");
     } else {
       Swal.fire({
         title: "Error",
@@ -41,7 +40,7 @@ const Login = () => {
     }
   }
 
-  return ( 
+  return (
     <main className="cont-todo">
       <div className="login-container">
         <section className="cont-img">

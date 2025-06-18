@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
+from rest_framework.views import APIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView,RetrieveAPIView
 from .serializers import CampanaSerializer, ApoyoSerializer
 from .models import Campana, Apoyo
+from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, BasePermission, SAFE_METHODS
 
 class PermisosPersonalizados(BasePermission):  
@@ -50,6 +52,17 @@ class CampanaListApiView(ListAPIView):
     serializer_class = CampanaSerializer
 
 class ApoyoCreateView(ListCreateAPIView):
-    permission_classes = [PermisosPersonalizados]
+    # permission_classes = [PermisosPersonalizados]
     queryset = Apoyo.objects.all()
     serializer_class = ApoyoSerializer
+
+class ApoyoCampanaID(APIView):
+    def get(self, request, campana):
+        try:
+            apoyos = Apoyo.objects.filter(campana=campana)
+            serializer = ApoyoSerializer(apoyos, many=True)
+            return Response(serializer.data)
+        except Apoyo.DoesNotExist:
+            return Response({"error": "No se encontraron apoyos para esta campaña."}, status=404)
+        
+   
