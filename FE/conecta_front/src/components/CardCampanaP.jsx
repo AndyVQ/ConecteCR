@@ -1,4 +1,5 @@
 import "../styles/CardCampanaP.css";
+import { useState } from "react";
 
 const CardCampanaP = ({
   titulo,
@@ -7,7 +8,10 @@ const CardCampanaP = ({
   fecha,
   direccion,
   cantApoyos,
+  onApoyar,
+  disabled,
 }) => {
+  const [clicked, setClicked] = useState(false);
   return (
     <div className="card-campana">
       <input value={cantApoyos} className="cont-apoyos" />
@@ -16,7 +20,16 @@ const CardCampanaP = ({
       <p className="direccion-campana">Dirección: {direccion} </p>
       <p className="fecha-campana">Fecha: {fecha}</p>
       <p className="comunidad-campana">Comunidad: {comunidad}</p>
-      <button className="mx-auto d-flex mt-3 btn btn-success">Apoyar</button>
+      <button
+        onClick={() => {
+          setClicked(true);
+          onApoyar();
+        }}
+        disabled={disabled}
+        className={`mx-auto d-flex mt-3 btn btn-success apoyar-btn ${clicked ? "clicked" : ""}`}
+      >
+        {disabled ? "Gracias" : "Apoyar"}
+      </button>
     </div>
   );
 };

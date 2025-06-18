@@ -15,8 +15,11 @@ class Campana(models.Model):
         return self.nombre_campana
 
 class Apoyo(models.Model):
-    usuario = models.ForeignKey("usuarios.Perfil",on_delete=models.CASCADE)
-    campana = models.ForeignKey(Campana,on_delete=models.CASCADE)
-    cantidad_apoyo = models.IntegerField(null=False,blank=False)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    campana = models.ForeignKey(Campana, on_delete=models.CASCADE)
+    cantidad_apoyo = models.IntegerField(default=1)
+
+    class Meta:
+        unique_together = ("usuario", "campana")
    
     

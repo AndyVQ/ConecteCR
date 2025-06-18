@@ -54,6 +54,30 @@
 .fecha-campana {
   font-weight: 700; 
   font-size: 1.2rem;
-  color: #e0f2f1; 
+    color: #e0f2f1;
 }
+
+.apoyar-btn {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.apoyar-btn.clicked {
+  animation: apoyar-pulse 0.3s forwards;
+}
+
+@keyframes apoyar-pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.apoyar-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 

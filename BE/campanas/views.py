@@ -5,6 +5,7 @@ from .serializers import CampanaSerializer, ApoyoSerializer
 from .models import Campana, Apoyo
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, BasePermission, SAFE_METHODS
+from rest_framework import status
 
 class PermisosPersonalizados(BasePermission):  
     def has_permission(self, request, view):
@@ -35,7 +36,7 @@ class PermisosPersonalizados(BasePermission):
         return False
 
 class CampanaCreateView(ListCreateAPIView):
-    permission_classes = [PermisosPersonalizados]
+    # permission_classes = [PermisosPersonalizados]
     queryset = Campana.objects.all()
     serializer_class = CampanaSerializer
     
@@ -55,6 +56,14 @@ class ApoyoCreateView(ListCreateAPIView):
     # permission_classes = [PermisosPersonalizados]
     queryset = Apoyo.objects.all()
     serializer_class = ApoyoSerializer
+
+    def create(self, request, *args, **kwargs):
+        usuario = request.data.get("usuario")
+        campana = request.data.get("campana")
+        if Apoyo.objects.filter(usuario_id=usuario, campana_id=campana).exists():
+            return Response({"detail": "Ya votó esta campaña"}, status=status.HTTP_400_BAD_REQUEST)
+        return super().create(request, *args, **kwargs)
+
 
 class ApoyoCampanaID(APIView):
     def get(self, request, campana):
