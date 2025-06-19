@@ -1,10 +1,13 @@
+
+
 .card-noticia {
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   max-width: 350px;
   margin-left: 50px;
   transition: transform 0.3s ease;
+    
 }
 
 .card-noticia:hover {
@@ -38,7 +41,7 @@
 
 .boton-card-noticia {
   display: inline-block;
-  background-color: #5cdb95; /* Verde claro */
+  background-color: #2aba42; /* Verde claro */
   color: #ffffff;
   padding: 10px 15px;
   text-decoration: none;
@@ -48,5 +51,5 @@
 }
 
 .boton-card-noticia:hover {
-  background-color: #38a69d; /* Verde oscuro al hacer hover */
+  background-color: #38a66f; 
 }

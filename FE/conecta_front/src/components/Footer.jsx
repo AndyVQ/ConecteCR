@@ -1,4 +1,4 @@
-import "../styles/footer.css"
+import "../styles/footer.css";
 
 const FooterPage = () => {
   return (
@@ -6,9 +6,15 @@ const FooterPage = () => {
       <div className="contenedor-pie">
         <div className="enlaces-pie">
           <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+            <li>
+              <a href="#">Acerca de</a>
+            </li>
+            <li>
+              <a href="#">Contacto</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -17,5 +23,5 @@ const FooterPage = () => {
       </div>
     </footer>
   );
-}
+};
 export default FooterPage;

@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/cardNot.css";
 function CardNoticia({ title, description, imageUrl, link }) {
   return (
+    <div className="container">
     <div className="card-noticia">
       {imageUrl && (
         <img src={imageUrl} alt={title} className="imagen-card-noticia" />
@@ -20,6 +21,7 @@ function CardNoticia({ title, description, imageUrl, link }) {
           </a>
         )}
       </div>
+    </div>
     </div>
     
   );

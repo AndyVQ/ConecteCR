@@ -16,10 +16,14 @@ import PagRepModal from "../pages/PagRepModal";
 import PagPeticiones from "../pages/PagPeticiones";
 import PagReportes from "../pages/PagReportes";
 import RutaPrivada from "./RutaPrivada";
+<<<<<<< HEAD
 import PagForoAdmin from "../pages/PagForoAdmin";
 import PagAnAdmin from "../pages/PagAnAdmin";
 
 
+=======
+import PagNoticias from "../pages/PagNoticias";
+>>>>>>> 4f9294e64be43006f248ebb2df372db04bb21bea
 
 function Routing() {
   return (
@@ -47,8 +51,12 @@ function Routing() {
           <Route path="/RepModal" element={<PagRepModal />} />
           <Route path="/PagPeti" element={<PagPeticiones />} />
           <Route path="/PagReport" element={<PagReportes />} />
+<<<<<<< HEAD
           <Route path="/ForoAdmin" element={<PagForoAdmin />} />
           <Route path="/AnAdmin" element={<PagAnAdmin />} />
+=======
+          <Route path="/PagNoticias" element={<PagNoticias />} />
+>>>>>>> 4f9294e64be43006f248ebb2df372db04bb21bea
         </Routes>
       </Router>
     </div>
