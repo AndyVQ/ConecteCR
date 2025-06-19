@@ -4,12 +4,6 @@ from .serializers import VotacionesSerializer
 from .models import Votaciones
 from rest_framework.permissions import IsAuthenticated,BasePermission,SAFE_METHODS
 
-"""
-administrador
-moderador
-usuario
-"""
-
 class PermisosPersonalizados(BasePermission):
     def has_permission(self, request, view):
         usuario = request.user

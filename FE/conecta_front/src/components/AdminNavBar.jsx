@@ -27,6 +27,12 @@ const AdminNavBar = () => {
           <li>
             <a href="/NotAdmin">Noticias</a>
           </li>
+          <li>
+            <a href="/ForoAdmin">Foro</a>
+          </li>
+          <li>
+            <a href="/AnAdmin">Anuncios</a>
+          </li>
         </ul>
       </nav>
     </>

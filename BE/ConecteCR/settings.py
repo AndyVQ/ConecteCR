@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'peticiones',
     'reportes',
     'usuarios',
+    'foro',
+    'anuncios',
     'votaciones',
     'noticias',
     'corsheaders',

@@ -22,12 +22,12 @@ class PermisosPersonalizados(BasePermission):
             return False
         
         if "moderador" in grupos_usuario:
-            if metodo_peticion in ["POST", "PATCH", "DELETE"]:
+            if metodo_peticion in ["POST","GET" ,"PATCH", "DELETE"]:
                 return True
             return False
         
         if "administrador" in grupos_usuario:
-            if metodo_peticion in ["POST", "PUT", "PATCH", "DELETE"]:
+            if metodo_peticion in ["POST", "GET","PUT", "PATCH", "DELETE"]:
                 return True
             if metodo_peticion in SAFE_METHODS:
                 return True

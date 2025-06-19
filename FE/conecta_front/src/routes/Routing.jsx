@@ -16,6 +16,10 @@ import PagRepModal from "../pages/PagRepModal";
 import PagPeticiones from "../pages/PagPeticiones";
 import PagReportes from "../pages/PagReportes";
 import RutaPrivada from "./RutaPrivada";
+import PagForoAdmin from "../pages/PagForoAdmin";
+import PagAnAdmin from "../pages/PagAnAdmin";
+
+
 
 function Routing() {
   return (
@@ -43,6 +47,8 @@ function Routing() {
           <Route path="/RepModal" element={<PagRepModal />} />
           <Route path="/PagPeti" element={<PagPeticiones />} />
           <Route path="/PagReport" element={<PagReportes />} />
+          <Route path="/ForoAdmin" element={<PagForoAdmin />} />
+          <Route path="/AnAdmin" element={<PagAnAdmin />} />
         </Routes>
       </Router>
     </div>

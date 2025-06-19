@@ -9,5 +9,8 @@ urlpatterns = [
     path("intVotaciones/",include("votaciones.urls")),
     path("comunidades/",include("comunidades.urls")),
     path("intPeticiones/",include("peticiones.urls")),
-    path("intNoticias/",include("noticias.urls")),   
+    path("intNoticias/",include("noticias.urls")),  
+    path("intForo/",include("foro.urls")),
+    path("intAnuncio/",include("anuncios.urls")),
+    
 ]

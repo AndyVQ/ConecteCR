@@ -19,7 +19,7 @@ function NotModal({ abrirModal, cerrarModal, noticias }) {
       } 
 
       async function fetchNews() {
-        const newsGet = await getData("intNoticias/noticia_create/") || [];
+        const newsGet = await getData("intNoticias/noticia_get/") || [];
         setNews(newsGet);
       }
       fetchNews();

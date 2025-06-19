@@ -88,12 +88,10 @@ const [search, setSearch] = useState("")
 
       <div className="admin-card">
         <div className="admin-card-header">
-          <h3>Estadísticas</h3>
+          <h3>Fotos Compartidas</h3>
           <img src="\src\img\logo sin fondo.png" alt="Logo ConecteCR"/>
         </div>
         <div className="admin-card-body">
-          <div className="admin-chart-placeholder">[Gráfico aquí]</div>
-          <h4>Fotos compartidas</h4>
           <div className="admin-photo-carousel">
             <button>{'<'}</button>
           <img src="\src\img\logo sin fondo.png" alt="Logo ConecteCR"/>
@@ -101,7 +99,16 @@ const [search, setSearch] = useState("")
           </div>
         </div>
       </div>
+      <div className="admin-card">
+        <div className="admin-card-header">
+          <h3>Estadísticas</h3>
+          <img src="\src\img\logo sin fondo.png" alt="Logo ConecteCR"/>
+        </div>
+        <div className="admin-card-body">
+          <div className="admin-chart-placeholder">[Gráfico aquí]</div>
+        </div>
+      </div>
     </div>
-  );
+  );  
 };
 export default Admin
