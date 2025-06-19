@@ -1,48 +1,62 @@
-  import React from 'react';
-  import "../styles/Card.css"
+import { useNavigate } from 'react-router-dom'; 
+import "../styles/Card.css";
 
-  const cardsData = [
-    {
-      title: 'Foros de Propuestas',
-      description: 'Comparte tus ideas con la comunidad y recibe retroalimentación en tiempo real.',
-      buttonText: 'Ir al Foro'
-    },
-    {
-      title: 'Votaciones Ciudadanas',
-      description: 'Participa en encuestas locales para apoyar proyectos de tu interés.',
-      buttonText: 'Votar Ahora'
-    },
-    {
-      title: 'Directorio de Comercios',
-      description: 'Descubre y apoya negocios locales cerca de ti.',
-      buttonText: 'Ver Comercios'
+const cardsData = [
+  {
+    title: 'Noticias Locales',
+    description: 'Mantente informado sobre los eventos y noticias más relevantes de tu comunidad.',
+    buttonText: 'Leer Más',
+    redirectTo: '/pagnoticias' 
+  },
+  {
+    title: 'Anuncios Comunitarios',
+    description: 'Publica y descubre anuncios importantes de tu vecindario.',
+    buttonText: 'Leer Anuncios',
+    redirectTo: '' // No tendrá redirección
+  },
+  {
+    title: 'Foros de Discusión',
+    description: 'Participa en debates y comparte tus opiniones sobre temas locales.',
+    buttonText: 'Unirse al Foro',
+    redirectTo: '' // No tendrá redirección
+  }
+];
+
+const CardItem = ({ title, description, buttonText, redirectTo }) => {
+  const navigate = useNavigate();  
+
+  
+  const handleClick = () => {
+    if (redirectTo) {
+      navigate(redirectTo); 
+    } else {
+      alert(`No hay redirección definida para ${title}`);
     }
-  ];
+  };
 
-
-  const CardItem = ({ title, description, buttonText, onButtonClick }) => (
+  return (
     <div className="card">
       <h3 className="card-header">{title}</h3>
       <p className="card-body">{description}</p>
-      <button className="card-button" onClick={onButtonClick}>
+      <button className="card-button" onClick={handleClick}>
         {buttonText}
       </button>
     </div>
   );
+};
 
+const Cards = () => (
+  <div className="cards-container">
+    {cardsData.map((card, idx) => (
+      <CardItem
+        key={idx}
+        title={card.title}
+        description={card.description}
+        buttonText={card.buttonText}
+        redirectTo={card.redirectTo} 
+      />
+    ))}
+  </div>
+);
 
-  const Cards = () => (
-    <div className="cards-container">
-      {cardsData.map((card, idx) => (
-        <CardItem
-          key={idx}
-          title={card.title}
-          description={card.description}
-          buttonText={card.buttonText}
-          onButtonClick={() => alert(`Has clickeado: ${card.title}`)}
-        />
-      ))}
-    </div>
-  );
-
-  export default Cards;
+export default Cards;

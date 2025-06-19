@@ -16,6 +16,7 @@ import PagRepModal from "../pages/PagRepModal";
 import PagPeticiones from "../pages/PagPeticiones";
 import PagReportes from "../pages/PagReportes";
 import RutaPrivada from "./RutaPrivada";
+import PagNoticias from "../pages/PagNoticias";
 
 function Routing() {
   return (
@@ -43,6 +44,7 @@ function Routing() {
           <Route path="/RepModal" element={<PagRepModal />} />
           <Route path="/PagPeti" element={<PagPeticiones />} />
           <Route path="/PagReport" element={<PagReportes />} />
+          <Route path="/PagNoticias" element={<PagNoticias />} />
         </Routes>
       </Router>
     </div>
