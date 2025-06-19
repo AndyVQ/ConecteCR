@@ -19,6 +19,10 @@ import RutaPrivada from "./RutaPrivada";
 import PagNoticias from "../pages/PagNoticias";
 import PagForoAdmin from "../pages/PagForoAdmin";
 import PagAnAdmin from "../pages/PagAnAdmin";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9cf7df1f5149af87934b7f3f11d48bf657df2e14
 function Routing() {
   return (
     <div>
@@ -45,9 +49,15 @@ function Routing() {
           <Route path="/RepModal" element={<PagRepModal />} />
           <Route path="/PagPeti" element={<PagPeticiones />} />
           <Route path="/PagReport" element={<PagReportes />} />
+<<<<<<< HEAD
           <Route path="/ForoAdmin" element={<PagForoAdmin />} />
           <Route path="/AnAdmin" element={<PagAnAdmin />} />
           <Route path="/PagNoticias" element={<PagNoticias />} />
+=======
+          <Route path="/PagNoticias" element={<PagNoticias />} />
+          <Route path="/ForoAdmin" element={<PagForoAdmin />} />
+          <Route path="/AnAdmin" element={<PagAnAdmin />} />
+>>>>>>> 9cf7df1f5149af87934b7f3f11d48bf657df2e14
         </Routes>
       </Router>
     </div>
